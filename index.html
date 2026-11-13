@@ -81,6 +81,11 @@
   @media (max-width: 760px) {
     [data-hero-video] { -webkit-mask-image: none !important; mask-image: none !important; object-fit: cover !important; object-position: 50% 30% !important; }
   }
+
+  @media (max-width: 820px) {
+    [data-m="case"] { grid-template-columns: 1fr !important; }
+    [data-m="case-img"] { border-right: none !important; border-bottom: 1px solid rgba(201,162,75,0.22) !important; }
+  }
 </style>
 </helmet>
 
@@ -94,6 +99,7 @@
     <div data-m="navlinks" style="display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; min-width: 0; row-gap: 14px; column-gap: clamp(14px, 2.4vw, 44px); padding-top: 10px">
       <a href="#work" style="font-family: 'Montserrat', sans-serif; font-size: clamp(11px, 1.05vw, 13px); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #F5F2EB; white-space: nowrap" style-hover="color: #C9A24B">Work</a>
       <a href="#create" style="font-family: 'Montserrat', sans-serif; font-size: clamp(11px, 1.05vw, 13px); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #F5F2EB; white-space: nowrap" style-hover="color: #C9A24B">Services</a>
+      <a href="/websites-seo" style="font-family: 'Montserrat', sans-serif; font-size: clamp(11px, 1.05vw, 13px); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #F5F2EB; white-space: nowrap" style-hover="color: #C9A24B">Websites &amp; SEO</a>
       <a href="#packages" style="font-family: 'Montserrat', sans-serif; font-size: clamp(11px, 1.05vw, 13px); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #F5F2EB; white-space: nowrap" style-hover="color: #C9A24B">Packages</a>
       <a href="#story" style="font-family: 'Montserrat', sans-serif; font-size: clamp(11px, 1.05vw, 13px); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #F5F2EB; white-space: nowrap" style-hover="color: #C9A24B">About</a>
       <a href="#faq" style="font-family: 'Montserrat', sans-serif; font-size: clamp(11px, 1.05vw, 13px); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #F5F2EB; white-space: nowrap" style-hover="color: #C9A24B">FAQ</a>
@@ -119,9 +125,7 @@
         <a href="#contact" style="display: inline-flex; align-items: center; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A24B; border: 1px solid #C9A24B; padding: 20px 42px; transition: background 0.3s, color 0.3s, box-shadow 0.3s" style-hover="background: linear-gradient(120deg, #C9A24B 0%, #E4C989 50%, #C9A24B 100%); color: #000000; animation: btnGlow 2.6s ease-in-out infinite">
           Start a Project
         </a>
-        <a href="#work" style="display: inline-flex; align-items: center; gap: 12px; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,242,235,0.8); padding: 20px 8px; transition: color 0.3s, text-shadow 0.3s" style-hover="color: #C9A24B; text-shadow: 0 0 18px rgba(201,162,75,0.55)">
-          Explore Our Work <span style="font-family: 'Playfair Display', serif">→</span>
-        </a>
+        <a href="tel:+12532783019" aria-label="Call or text PixAI at (253) 278-3019" style="display: inline-flex; align-items: center; gap: 12px; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #F5F2EB; border: 1px solid rgba(201,162,75,0.55); padding: 20px 34px; transition: border-color 0.3s, color 0.3s, background 0.3s" style-hover="border-color: #C9A24B; color: #C9A24B; background: rgba(201,162,75,0.06)"><span style="display: flex; color: #C9A24B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16.5v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1.1 3.7 2 2 0 0 1 3.1 1.5h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L7.1 9.3a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2.2z"></path></svg></span><span>Call or Text <span style="color: #C9A24B">(253) 278-3019</span></span></a>
       </div>
     </div>
 
@@ -152,6 +156,25 @@
         Explore selected PixAI work below
       </p>
     </div>
+
+    <!-- Featured case study — Kraft Electric -->
+    <a href="/websites-seo" data-m="case" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); border: 1px solid rgba(201,162,75,0.35); margin-bottom: clamp(52px, 5.6vw, 104px); text-decoration: none; color: #F5F2EB; background: #060606; transition: border-color 0.35s, box-shadow 0.35s" style-hover="border-color: #C9A24B; box-shadow: 0 0 48px -14px rgba(201,162,75,0.5); color: #F5F2EB">
+      <div data-m="case-img" style="position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-right: 1px solid rgba(201,162,75,0.22)">
+        <img src="uploads/kraft-electric-frame.webp" alt="Kraft Electric LLC website designed by PixAI" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%">
+      </div>
+      <div style="padding: clamp(32px, 4.4vw, 72px); display: flex; flex-direction: column; justify-content: center; gap: 26px">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px">
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(245,242,235,0.55)">Featured Case Study</span>
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #C9A24B; border: 1px solid rgba(201,162,75,0.5); padding: 7px 12px">Web Design &amp; Local SEO</span>
+        </div>
+        <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(30px, 3vw, 48px); line-height: 1.1; color: #F5F2EB">Kraft Electric LLC</h3>
+        <div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid rgba(201,162,75,0.22); padding-top: 26px">
+          <span style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(44px, 5vw, 80px); line-height: 1; color: #C9A24B">#30 → #16</span>
+          <span style="font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: rgba(245,242,235,0.8)">on Google in under two weeks</span>
+        </div>
+        <span style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #C9A24B">View Case Study <span style="font-family: 'Playfair Display', serif">→</span></span>
+      </div>
+    </a>
 
     <!-- Editorial portfolio — three rows -->
     <div style="display: flex; flex-direction: column; gap: clamp(52px, 5.6vw, 104px)">
@@ -281,12 +304,12 @@
         <span style="font-family: 'Playfair Display', serif; font-size: 28px; color: #C9A24B; opacity: 0.35; transition: opacity 0.35s; text-align: right">→</span>
       </div>
 
-      <div data-m="svc-row" style="display: grid; grid-template-columns: 90px 1fr minmax(280px, 38%) 60px; align-items: center; gap: 32px; padding: 44px 20px; border-bottom: 1px solid rgba(201,162,75,0.22); cursor: default; transition: background 0.35s, padding-left 0.35s" style-hover="background: rgba(201,162,75,0.05); padding-left: 36px">
+      <a href="/websites-seo" data-m="svc-row" style="text-decoration: none; color: #F5F2EB; display: grid; grid-template-columns: 90px 1fr minmax(280px, 38%) 60px; align-items: center; gap: 32px; padding: 44px 20px; border-bottom: 1px solid rgba(201,162,75,0.22); cursor: pointer; transition: background 0.35s, padding-left 0.35s" style-hover="background: rgba(201,162,75,0.05); padding-left: 36px">
         <span style="font-family: 'Playfair Display', serif; font-weight: 400; font-style: italic; font-size: 20px; color: rgba(201,162,75,0.7)">06</span>
-        <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(26px, 2.6vw, 42px); line-height: 1.15; color: #F5F2EB; transition: color 0.35s">Website Design</h3>
-        <p style="margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 15px; line-height: 1.7; color: rgba(245,242,235,0.65); text-wrap: pretty">Modern, custom websites designed around your brand — built to look professional, communicate clearly, and turn visitors into customers.</p>
-        <span style="font-family: 'Playfair Display', serif; font-size: 28px; color: #C9A24B; opacity: 0.35; transition: opacity 0.35s; text-align: right">→</span>
-      </div>
+        <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(26px, 2.6vw, 42px); line-height: 1.15; color: #F5F2EB; transition: color 0.35s">Custom Websites, Local SEO &amp; GEO</h3>
+        <p style="margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 15px; line-height: 1.7; color: rgba(245,242,235,0.65); text-wrap: pretty">Modern, search-dominant websites built around your brand—engineered with full technical SEO, GEO (AI search optimization), and Google Business Profile alignment to rank higher and turn clicks into booked calls.</p>
+        <span style="font-family: 'Playfair Display', serif; font-size: 28px; color: #C9A24B; opacity: 0.8; transition: opacity 0.35s; text-align: right">→</span>
+      </a>
 
     </div>
 
@@ -555,6 +578,7 @@
             <option>AI Cloning &amp; Digital Characters</option>
             <option>Animation</option>
             <option>Creative Campaign</option>
+            <option>Custom Website &amp; Local SEO</option>
             <option>Something else</option>
           </select>
         </label>
@@ -669,11 +693,12 @@ class Component extends DCLogic {
   renderVals() {
     const show = this.props.showHeroPlaceholder ?? true;
     const qa = [
-      ["How long does my project take?", "Our Starter Content Package can typically be completed within 48 hours. Larger packages and custom projects may require additional time depending on the scope and complexity of the work. Your expected delivery date will always be confirmed before your project begins."],
+      ["How long does my project take?", "Our Essential Content Package can typically be completed within 48 hours. Larger packages and custom projects may require additional time depending on the scope and complexity of the work. Your expected delivery date will always be confirmed before your project begins."],
       ["How does payment work?", "A 50% deposit is required to begin your project. The remaining 50% is due upon completion, before the final high-resolution files are delivered."],
       ["Are revisions included?", "Yes. Each package includes up to 2 rounds of revisions to ensure your final content aligns with the approved creative direction. Revisions are intended to refine the original concept. Requests that significantly change the approved direction, concept, or scope of the project may require an additional fee."],
       ["What do you need from me to get started?", "We keep the process simple. Depending on your project, we may ask for your logo, brand colors, product images, reference photos, website or social media links, and any information that helps us understand your business. For cloning projects, additional reference images, video, and voice samples may be required. We\u2019ll provide clear instructions so you know exactly what to send."],
       ["Will the AI content actually look like my products, brand, or me?", "Consistency matters. We use your provided reference materials to guide the creative process and carefully refine the results to stay as accurate and aligned with your brand as possible. For products, avatars, and digital clones, our goal is to preserve the recognizable details that matter while maintaining the quality and creative direction of the final content."],
+      ["Do you also help my website rank on Google and AI search?", "Yes. Every custom website we build includes full on-page SEO, image alt-text optimization, Google Search Console setup, and Google Business Profile alignment so you show up in local searches and get recommended by AI search tools."],
       ["Do you offer monthly content packages?", "Yes. PixAI offers monthly retainers for businesses that need fresh, consistent content on an ongoing basis. Retainer clients receive preferred monthly pricing, priority scheduling, and ongoing creative direction to keep their content aligned and consistent.\n\nMonthly retainers require a 3-month minimum commitment. Retainer pricing cannot be combined with other promotions or discounts."]
     ];
     const faqs = qa.map(([q, a], i) => {
