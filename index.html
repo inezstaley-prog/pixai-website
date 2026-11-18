@@ -85,6 +85,8 @@
   @media (max-width: 820px) {
     [data-m="case"] { grid-template-columns: 1fr !important; }
     [data-m="case-img"] { border-right: none !important; border-bottom: 1px solid rgba(201,162,75,0.22) !important; }
+    [data-m="web-offer"] { grid-template-columns: 1fr !important; gap: 34px !important; padding: 40px 24px !important; }
+    [data-m="web-offer-ctas"] { align-items: flex-start !important; }
   }
 </style>
 </helmet>
@@ -169,8 +171,8 @@
         </div>
         <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(30px, 3vw, 48px); line-height: 1.1; color: #F5F2EB">Kraft Electric LLC</h3>
         <div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid rgba(201,162,75,0.22); padding-top: 26px">
-          <span style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(44px, 5vw, 80px); line-height: 1; color: #C9A24B">#30 → #16</span>
-          <span style="font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: rgba(245,242,235,0.8)">on Google in under two weeks</span>
+          <span style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(44px, 5vw, 80px); line-height: 1; color: #C9A24B">#30 → #6</span>
+          <span style="font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: rgba(245,242,235,0.8)">in 48 days for “electrician Bonney Lake”</span>
         </div>
         <span style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #C9A24B">View Case Study <span style="font-family: 'Playfair Display', serif">→</span></span>
       </div>
@@ -348,7 +350,10 @@
 
     <div style="display: flex; align-items: center; justify-content: center; gap: 22px; margin-bottom: 40px">
       <span style="display: block; height: 1px; flex: 1; max-width: 120px; background: linear-gradient(to right, transparent, rgba(201,162,75,0.6))"></span>
-      <span style="font-family: 'Montserrat', sans-serif; font-size: clamp(11px, 1.1vw, 13px); font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #C9A24B; text-align: center">Launch Special — 50% Off All Packages for a Limited Time</span>
+      <span style="display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">
+        <span style="font-family: 'Montserrat', sans-serif; font-size: clamp(11px, 1.1vw, 13px); font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #C9A24B">Black Friday Special</span>
+        <span style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(20px, 2vw, 28px); line-height: 1.2; letter-spacing: 0.04em; text-transform: uppercase; color: #F5F2EB">50% Off AI Content Packages</span>
+      </span>
       <span style="display: block; height: 1px; flex: 1; max-width: 120px; background: linear-gradient(to left, transparent, rgba(201,162,75,0.6))"></span>
     </div>
 
@@ -421,6 +426,23 @@
         Need content every month? Monthly retainers are available with preferred pricing and priority scheduling.
       </p>
       <a href="#contact" style="font-family: 'Montserrat', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #C9A24B; border-bottom: 1px solid rgba(201,162,75,0.4); padding-bottom: 5px; transition: border-color 0.3s, color 0.3s" style-hover="border-color: #C9A24B; color: #E4C989">Ask About Monthly Retainers →</a>
+    </div>
+
+    <!-- Black Friday website offers: separate from the content packages -->
+    <div data-m="web-offer" style="display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr); gap: clamp(40px, 5vw, 80px); align-items: center; max-width: 1180px; margin: 90px auto 0; padding: clamp(44px, 4.6vw, 68px) clamp(28px, 4.6vw, 68px); border: 1px solid rgba(201,162,75,0.35); background: linear-gradient(135deg, rgba(201,162,75,0.08) 0%, rgba(0,0,0,0.6) 65%)">
+      <div>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 26px">
+          <span style="display: block; width: 48px; height: 1px; background: rgba(201,162,75,0.5); flex-shrink: 0"></span>
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: #C9A24B">Black Friday Website Offers</span>
+        </div>
+        <h3 style="margin: 0 0 22px; font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(28px, 2.7vw, 44px); line-height: 1.15; color: #F5F2EB; text-wrap: balance">Custom Websites. <span style="color: #C9A24B; font-style: italic">Pricing Built Around You.</span></h3>
+        <p style="margin: 0 0 18px; max-width: 640px; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.8; color: rgba(245,242,235,0.75); text-wrap: pretty">Need a new website, a redesign or better search visibility? Website, SEO and GEO projects are quoted individually based on your business needs, website size, functionality and scope of work. Black Friday promotional pricing is available on custom proposals.</p>
+        <p style="margin: 0; max-width: 640px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 14px; line-height: 1.75; color: rgba(245,242,235,0.55); text-wrap: pretty">Website builds and ongoing SEO and GEO services can be quoted separately or combined to suit your goals.</p>
+      </div>
+      <div data-m="web-offer-ctas" style="display: flex; flex-direction: column; align-items: center; gap: 26px">
+        <a href="/websites-seo#audit" style="display: inline-flex; align-items: center; gap: 14px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #000000; background: #C9A24B; padding: 20px 34px; white-space: nowrap; transition: background 0.3s, box-shadow 0.3s" style-hover="background: linear-gradient(120deg, #E4C989 0%, #F5F2EB 50%, #E4C989 100%); color: #000000; animation: btnGlow 2.6s ease-in-out infinite">Request a Custom Quote <span style="font-family: 'Playfair Display', serif; font-weight: 400">→</span></a>
+        <a href="/websites-seo" style="font-family: 'Montserrat', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #C9A24B; border-bottom: 1px solid rgba(201,162,75,0.4); padding-bottom: 5px; transition: border-color 0.3s, color 0.3s" style-hover="border-color: #C9A24B; color: #E4C989">Explore Websites &amp; SEO →</a>
+      </div>
     </div>
 
     <!-- Custom projects -->
