@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio | PixAI AI Solutions</title>
+<meta name="description" content="Selected work from PixAI AI Solutions: websites and landing pages, AI visuals for fashion, bridal, beauty and real estate, and AI video and avatars.">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#000;color:#F5F2EB;scroll-behavior:smooth}
+  body{font-family:'Montserrat',sans-serif;overflow-x:hidden}
+  a{color:#C9A24B;text-decoration:none}
+  img,video{max-width:100%;height:auto}
+  ::selection{background:#C9A24B;color:#000}
+  .wrap{padding-left:clamp(20px,5vw,72px);padding-right:clamp(20px,5vw,72px)}
+
+  /* nav */
+  nav.top{position:sticky;top:0;z-index:100;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px clamp(16px,2vw,40px);padding:34px clamp(20px,4vw,72px) 22px;background:rgba(0,0,0,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+  .logo{display:block;width:172px;height:64px;overflow:hidden;position:relative;flex-shrink:0}
+  .logo img{position:absolute;width:213px;height:auto;left:-22px;top:-37px;max-width:none}
+  .links{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;row-gap:14px;column-gap:clamp(14px,2.4vw,44px);padding-top:10px}
+  .links a{font-size:clamp(11px,1.05vw,13px);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#F5F2EB;white-space:nowrap;transition:color .3s}
+  .links a:hover,.links a.on{color:#C9A24B}
+  .links a.cta{font-size:clamp(10.5px,1vw,12px);font-weight:600;color:#C9A24B;border:1px solid rgba(201,162,75,.7);padding:13px clamp(16px,1.8vw,24px);transition:background .3s,color .3s}
+  .links a.cta:hover{background:#C9A24B;color:#000}
+
+  /* header */
+  .head{padding-top:clamp(70px,9vw,130px);padding-bottom:clamp(36px,4vw,60px);border-top:1px solid rgba(201,162,75,.14)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+  .eyebrow i{display:block;width:48px;height:1px;background:rgba(201,162,75,.5)}
+  .eyebrow span{font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:#C9A24B}
+  h1{margin:0 0 30px;font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(38px,4.2vw,68px);line-height:1.12;text-transform:uppercase;text-wrap:balance}
+  h1 em{font-style:normal;color:#C9A24B}
+  .lede{margin:0;max-width:620px;font-size:17px;line-height:1.75;color:rgba(245,242,235,.85);text-wrap:pretty}
+
+  /* filters */
+  .filters{background:rgba(0,0,0,.94);border-top:1px solid rgba(201,162,75,.14);border-bottom:1px solid rgba(201,162,75,.14)}
+  .filters .in{display:flex;gap:clamp(8px,1.6vw,26px);overflow-x:auto;scrollbar-width:none;padding-top:14px;padding-bottom:14px}
+  .filters .in::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;min-height:44px;padding:0 22px;background:transparent;border:1px solid rgba(201,162,75,.3);color:rgba(245,242,235,.75);font:500 12px 'Montserrat',sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:all .3s}
+  .tab:hover{color:#C9A24B;border-color:rgba(201,162,75,.7)}
+  .tab[aria-pressed="true"]{background:#C9A24B;border-color:#C9A24B;color:#000}
+
+  /* sections */
+  section.cat{padding-top:clamp(60px,7vw,110px);padding-bottom:clamp(20px,3vw,40px)}
+  .cat-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 30px;margin-bottom:clamp(28px,3vw,48px);padding-bottom:20px;border-bottom:1px solid rgba(201,162,75,.22)}
+  .cat-h h2{margin:0;font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(26px,2.6vw,40px);text-transform:uppercase}
+  .cat-h h2 em{font-style:normal;color:#C9A24B}
+  .cat-h p{margin:0;font-size:14px;color:rgba(245,242,235,.6)}
+  .label{font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase}
+  .gold{color:#C9A24B}.dim{color:rgba(245,242,235,.55)}
+
+  /* kraft */
+  .case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);border:1px solid rgba(201,162,75,.35);color:#F5F2EB;background:#060606;margin-bottom:clamp(22px,2.4vw,40px);transition:border-color .3s}
+  .case:hover{border-color:#C9A24B;color:#F5F2EB}
+  .case .im{position:relative;aspect-ratio:4/3;overflow:hidden;border-right:1px solid rgba(201,162,75,.22)}
+  .case .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0}
+  .case .tx{padding:clamp(28px,4vw,64px);display:flex;flex-direction:column;justify-content:center;gap:24px}
+  .pill{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#C9A24B;border:1px solid rgba(201,162,75,.5);padding:7px 12px}
+  .case h3{margin:0;font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(28px,3vw,46px);line-height:1.1}
+  .big{font-family:'Playfair Display',serif;font-size:clamp(42px,5vw,76px);line-height:1;color:#C9A24B}
+  .case .res{display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(201,162,75,.22);padding-top:24px}
+  .case .res span:last-child{font-size:16px;line-height:1.6;color:rgba(245,242,235,.8)}
+
+  /* tile grids */
+  .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,26px)}
+  .tile{display:block;color:#F5F2EB}
+  .tile .frame{position:relative;aspect-ratio:4/5;overflow:hidden;border:1px solid rgba(201,162,75,.22);transition:border-color .3s}
+  .tile .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+  .tile:hover .frame{border-color:#C9A24B}
+  .tile:hover .frame img{transform:scale(1.035)}
+  .tile .cap{display:flex;flex-direction:column;gap:6px;padding-top:16px}
+  .tile .nm{font-family:'Playfair Display',serif;font-size:clamp(20px,1.7vw,26px);line-height:1.2}
+  .tile .go{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C9A24B}
+  .note{margin:22px 0 0;font-size:13px;line-height:1.6;color:rgba(245,242,235,.5)}
+
+  /* visuals */
+  .rows{display:flex;flex-direction:column;gap:clamp(40px,4.4vw,80px)}
+  .prow{display:grid;gap:clamp(16px,1.6vw,26px);align-items:start}
+  .prow.a{grid-template-columns:1.7778fr .8fr}.prow.b{grid-template-columns:.8fr 1.7778fr}
+  .prow figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:14px}
+  .prow .box{position:relative;width:100%}
+  .prow .box img{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .prow .w{aspect-ratio:16/9}.prow .w img{object-fit:contain}
+  .prow .p{aspect-ratio:4/5}.prow .p img{object-fit:cover}
+
+  /* video */
+  .vfeat{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,32px);max-width:880px;margin:0 auto clamp(40px,4vw,70px)}
+  .vgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.4vw,24px)}
+  .vt{position:relative;aspect-ratio:9/16;overflow:hidden;background:#0A0A0A}
+  .vt .tag{position:absolute;left:18px;bottom:16px;right:18px;pointer-events:none;font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,242,235,.92);text-shadow:0 2px 12px rgba(0,0,0,.8)}
+  .vh{font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,242,235,.55);margin:0 0 18px}
+  .vfeat figure{margin:0}.vfeat figcaption{padding-top:14px}
+
+  /* band + footer */
+  .band{margin-top:clamp(70px,8vw,130px);border-top:1px solid rgba(201,162,75,.14);padding-top:clamp(70px,8vw,120px);padding-bottom:clamp(70px,8vw,120px);text-align:center}
+  .band h2{margin:0 0 22px;font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(30px,3.4vw,54px);line-height:1.15;text-transform:uppercase;text-wrap:balance}
+  .band h2 em{font-style:normal;color:#C9A24B}
+  .band p{margin:0 auto 38px;max-width:520px;font-size:16px;line-height:1.7;color:rgba(245,242,235,.8)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;font-size:14px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#C9A24B;border:1px solid #C9A24B;padding:0 40px;transition:background .3s,color .3s}
+  .btn:hover{background:#C9A24B;color:#000}
+  footer{border-top:1px solid rgba(201,162,75,.16);padding:72px clamp(24px,5vw,72px) 56px;display:flex;flex-direction:column;align-items:center;gap:36px}
+  footer .logo{width:205px;height:77px}footer .logo img{width:253px;left:-26px;top:-43px}
+  footer .legal{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center}
+  footer .legal a{font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,242,235,.6)}
+  footer .legal a:hover{color:#C9A24B}
+  footer small{font-size:11px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,242,235,.35);text-align:center}
+
+  [hidden]{display:none!important}
+
+  @media (max-width:1000px){.vgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:900px){.prow.a,.prow.b{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}}
+  @media (max-width:820px){.case{grid-template-columns:1fr}.case .im{border-right:0;border-bottom:1px solid rgba(201,162,75,.22)}}
+  @media (max-width:760px){
+    nav.top{flex-direction:column;align-items:center;gap:8px;padding:12px 16px 10px}
+    .logo{width:118px;height:44px}.logo img{width:146px;left:-15px;top:-25px}
+    .links{justify-content:center;column-gap:9px;row-gap:6px;padding-top:0}
+    .links a{font-size:10px;letter-spacing:.06em}.links a.cta{display:none}
+  }
+  @media (max-width:560px){.grid3{grid-template-columns:1fr}.vfeat{grid-template-columns:1fr;max-width:340px}.vt .tag{font-size:10px;letter-spacing:.18em}}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Main">
+  <a class="logo" href="/"><img src="uploads/pixai-logo.webp" alt="PixAI AI Solutions"></a>
+  <div class="links">
+    <a href="/portfolio" class="on" aria-current="page">Portfolio</a>
+    <a href="/#create">Services</a>
+    <a href="/websites-seo">Websites &amp; SEO</a>
+    <a href="/#packages">Packages</a>
+    <a href="/#story">About</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#contact">Contact</a>
+    <a href="/#contact" class="cta">Start a Project</a>
+  </div>
+</nav>
+
+<header class="head wrap">
+  <div class="eyebrow"><i></i><span>Portfolio</span></div>
+  <h1>Work that makes a business <em>hard to overlook</em></h1>
+  <p class="lede">Websites that rank and convert, AI visuals for fashion, bridal, beauty and real estate, and videos and avatars that stop the scroll. Pick a category or browse it all.</p>
+</header>
+
+<div class="filters"><div class="in wrap" role="group" aria-label="Filter portfolio">
+  <button class="tab" data-f="all" aria-pressed="true">All</button>
+  <button class="tab" data-f="web" aria-pressed="false">Websites &amp; Landing Pages</button>
+  <button class="tab" data-f="visuals" aria-pressed="false">AI Visuals</button>
+  <button class="tab" data-f="video" aria-pressed="false">Video &amp; Avatars</button>
+</div></div>
+
+<main>
+
+<!-- WEBSITES -->
+<section class="cat wrap" id="web" data-cat="web">
+  <div class="cat-h"><h2>Websites <em>&amp; Landing Pages</em></h2><p>Built to rank, convert and load fast on a phone</p></div>
+
+  <a class="case" href="/websites-seo">
+    <div class="im"><img src="uploads/kraft-electric-frame.webp" alt="Kraft Electric LLC website designed by PixAI" loading="lazy"></div>
+    <div class="tx">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px">
+        <span class="label dim">Client Work</span><span class="pill">Web Design &amp; Local SEO</span>
+      </div>
+      <h3>Kraft Electric LLC</h3>
+      <div class="res"><span class="big">#30 → #6</span><span>in 48 days for “electrician Bonney Lake”</span></div>
+      <span class="label gold">View Case Study →</span>
+    </div>
+  </a>
+
+  <div class="grid3">
+    <a class="tile" href="/demos/zelia-madre/">
+      <div class="frame"><img src="uploads/zelia-madre-tile.webp" alt="Zelia Madre Vineyards wedding open house landing page" loading="lazy" width="720" height="900"></div>
+      <div class="cap"><span class="label dim">Concept · Landing Page</span><span class="nm">Zelia Madre Vineyards</span><span class="go">View live demo →</span></div>
+    </a>
+    <a class="tile" href="/demos/untamed/">
+      <div class="frame"><img src="uploads/untamed-tile.webp" alt="Untamed by Maison Cobre fragrance order page" loading="lazy" width="720" height="900"></div>
+      <div class="cap"><span class="label dim">Concept · Order Page</span><span class="nm">Untamed by Maison Cobre</span><span class="go">View live demo →</span></div>
+    </a>
+    <a class="tile" href="/demos/gera-cove/">
+      <div class="frame"><img src="uploads/gera-cove-tile.webp" alt="Gera Cove Property Management website" loading="lazy" width="720" height="900"></div>
+      <div class="cap"><span class="label dim">Concept · Website</span><span class="nm">Gera Cove Property Management</span><span class="go">View live demo →</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- AI VISUALS -->
+<section class="cat wrap" id="visuals" data-cat="visuals">
+  <div class="cat-h"><h2>AI <em>Visuals</em></h2><p>Fashion, bridal, beauty and real estate</p></div>
+  <div class="rows">
+    <div class="prow a">
+      <figure><div class="box w"><img src="uploads/campaign-imaginarium-v2.webp" alt="Imaginarium Fashion brand board with logo, product images and social graphics" loading="lazy"></div><figcaption class="label gold">Fashion Campaign</figcaption></figure>
+      <figure><div class="box p"><img src="uploads/portrait-bridal.webp" alt="AI creative for bridal shops" loading="lazy"></div><figcaption class="label dim">Bridal Campaign</figcaption></figure>
+    </div>
+    <div class="prow b">
+      <figure><div class="box p"><img src="uploads/portrait-spa.webp" alt="AI creative for spas and beauty studios" loading="lazy"></div><figcaption class="label dim">Beauty &amp; Spa Campaign</figcaption></figure>
+      <figure><div class="box w"><img src="uploads/campaign-maggie-smith-v2.webp" alt="Real estate campaign board" loading="lazy"></div><figcaption class="label gold">Real Estate Campaign</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="cat wrap" id="video" data-cat="video">
+  <div class="cat-h"><h2>Video <em>&amp; Avatars</em></h2><p>Tap a video to play it with sound</p></div>
+
+  <p class="vh">Featured</p>
+  <div class="vfeat">
+    <figure>
+      <div class="vt"><video-slot id="pf-neurogum" static src="uploads/neurogum-ad.mp4" poster="uploads/neurogum-poster.webp"></video-slot></div>
+      <figcaption class="label gold">Product Ad · Neurogum</figcaption>
+    </figure>
+    <figure>
+      <div class="vt"><video-slot id="pf-pixai-ad" static src="uploads/pixai-animation-ad.mp4" poster="uploads/pixai-animation-poster.webp"></video-slot></div>
+      <figcaption class="label gold">Animated Ad · PixAI</figcaption>
+    </figure>
+  </div>
+
+  <p class="vh">More reels</p>
+  <div class="vgrid">
+    <div class="vt"><video-slot id="pf-r05" static src="uploads/reel-05.mp4" poster="uploads/reel-05-poster.webp"></video-slot><div class="tag">Real Estate Walkthrough</div></div>
+    <div class="vt"><video-slot id="pf-r02" static src="uploads/reel-02-karina-style.mp4" poster="uploads/karina-style-poster.webp"></video-slot><div class="tag">Fashion</div></div>
+    <div class="vt"><video-slot id="pf-r03" static src="uploads/reel-03-laka-ugc.mp4" poster="uploads/laka-ugc-poster.webp"></video-slot><div class="tag">UGC</div></div>
+    <div class="vt"><video-slot id="pf-r06" static src="uploads/reel-06.mp4" poster="uploads/reel-06-poster.webp"></video-slot><div class="tag">Cinematic Commercial</div></div>
+    <div class="vt"><video-slot id="pf-r07" static src="uploads/reel-07.mp4" poster="uploads/reel-07-poster.webp"></video-slot><div class="tag">Podcast-Style</div></div>
+    <div class="vt"><video-slot id="pf-r08" static src="uploads/reel-08.mp4" poster="uploads/reel-08-poster.webp"></video-slot><div class="tag">Avatar (Clone &amp; Voice)</div></div>
+    <div class="vt"><video-slot id="pf-r09" static src="uploads/reel-09.mp4" poster="uploads/reel-09-poster.webp"></video-slot><div class="tag">Fashion Fun</div></div>
+    <div class="vt"><video-slot id="pf-r10" static src="uploads/reel-10.mp4" poster="uploads/reel-10-poster.webp"></video-slot><div class="tag">Fashion Show</div></div>
+  </div>
+</section>
+
+</main>
+
+<section class="band wrap">
+  <h2>Your business could be <em>next</em></h2>
+  <p>Tell us what you need and we’ll show you what’s possible.</p>
+  <a class="btn" href="/#contact">Start a Project</a>
+</section>
+
+<footer>
+  <a class="logo" href="/"><img src="uploads/pixai-logo.webp" alt="PixAI AI Solutions"></a>
+  <div class="legal"><a href="privacy.html">Privacy Policy</a><span style="color:rgba(201,162,75,.5)">·</span><a href="terms.html">Terms &amp; Conditions</a></div>
+  <small>© 2026 PixAI AI Solutions. All Rights Reserved.</small>
+</footer>
+
+<script src="./video-slot.js"></script>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab')),secs=[].slice.call(document.querySelectorAll('[data-cat]'));
+  function set(f,push){
+    tabs.forEach(function(t){t.setAttribute('aria-pressed',t.dataset.f===f?'true':'false')});
+    secs.forEach(function(s){s.hidden=!(f==='all'||s.dataset.cat===f)});
+    document.querySelectorAll('video-slot').forEach(function(s){s._pause&&s._pause()});
+    if(push){try{history.replaceState(null,'',f==='all'?location.pathname:'#'+f)}catch(e){}}
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){set(t.dataset.f,true)})});
+  var h=(location.hash||'').slice(1);
+  if(['web','visuals','video'].indexOf(h)>-1)set(h,false);
+})();
+</script>
+</body>
+</html>
