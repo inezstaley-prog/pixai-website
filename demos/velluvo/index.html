@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VELLUVO | The Tilt, coming soon</title>
+<meta name="description" content="Meet The Tilt by VELLUVO, a sculptural cat-eye in three unexpected colorways. Join the waitlist for one email at launch.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F8AF51">
+<link rel="preload" href="fonts/bodoni-moda-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dm-sans-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni-moda-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni-moda-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni-moda-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"DM Sans";src:url(fonts/dm-sans-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"DM Sans";src:url(fonts/dm-sans-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+
+:root{
+  --ivory:#F4EEE3; --paper:#FAF7F1; --ink:#131B29; --ink-2:#4A505C; --line:#D9CDB8;
+  --stone:#E7DAC5; --tang:#E2702A; --light:#FBF7EF; --mari:#F8AF51; --cream:#FBF3E4;
+  --serif:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --hdr:64px; --pad:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--ivory);color:var(--ink);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--tang);outline-offset:3px}
+
+/* ---------- wordmark ---------- */
+.wm{font-family:var(--serif);font-weight:500;font-size:24px;letter-spacing:.14em;line-height:1;text-decoration:none;display:inline-flex;align-items:baseline}
+.wm .v{position:relative;display:inline-block}
+.wm .v::after{content:"";position:absolute;left:calc(100% - .1em);top:.2em;width:.24em;height:.045em;background:currentColor;transform-origin:0 50%;transform:rotate(-52deg)}
+
+/* ---------- header ---------- */
+.hdr{position:fixed;inset:0 0 auto 0;height:var(--hdr);z-index:30;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);color:var(--ink);background:var(--mari);transition:background .4s,color .4s,border-color .4s;border-bottom:1px solid transparent}
+.hdr.solid{background:rgba(244,238,227,.94);color:var(--ink);border-bottom-color:var(--line);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;font:500 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.btn-sm{min-height:44px;padding:0 18px;font-size:11px}
+.hdr .btn:hover{background:var(--ink);color:var(--mari);border-color:var(--ink)}
+.hdr.solid .btn:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.btn-fill{background:var(--light);color:var(--ink);border-color:var(--light)}
+.btn-fill:hover{background:transparent;color:var(--light)}
+.btn-ink{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.btn-ink:hover{background:#26324a;border-color:#26324a}
+
+/* ---------- film ---------- */
+.film{position:relative;background:var(--mari)}
+.stage{position:sticky;top:0;height:100vh;height:100svh;margin-bottom:-100vh;margin-bottom:-100svh;overflow:hidden;background:var(--mari);z-index:1}
+.stage video,.stage .poster{position:absolute;left:0;right:0;width:100%;object-fit:contain;object-position:50% 50%;top:var(--ftop,var(--hdr));height:var(--fh,calc(100% - var(--hdr)))}
+.scrim{position:absolute;left:0;right:0;top:var(--ftop,var(--hdr));height:var(--fh,calc(100% - var(--hdr)));pointer-events:none;
+  background:
+   linear-gradient(0deg,rgba(19,27,41,.34) 0,rgba(19,27,41,0) 140px),
+   linear-gradient(90deg,rgba(19,27,41,.58) 0%,rgba(19,27,41,.30) 30%,rgba(19,27,41,0) 50%)}
+.rail{position:absolute;left:var(--pad);right:var(--pad);bottom:24px;display:flex;align-items:center;gap:18px;color:var(--light);font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;z-index:2}
+.rail ol{display:flex;gap:26px;list-style:none}
+.rail li{opacity:.5;transition:opacity .4s;white-space:nowrap}
+.rail li.on{opacity:1}
+.rail li b{font-weight:500;margin-right:8px}
+.bar{flex:1;height:1px;background:rgba(251,247,239,.32);position:relative;max-width:420px;margin-left:auto}
+.bar i{position:absolute;inset:0;background:var(--light);transform-origin:left;transform:scaleX(0)}
+.cue{position:absolute;left:50%;bottom:70px;transform:translateX(-50%);color:var(--light);font:500 10px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:12px;transition:opacity .5s;z-index:2}
+.cue i{width:1px;height:40px;background:linear-gradient(var(--light),transparent);animation:cue 1.8s ease-in-out infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.cue.gone{opacity:0}
+
+/* chapters scroll over the pinned film */
+.chapters{position:relative;z-index:2;pointer-events:none}
+.chap{position:relative;min-height:130vh;padding:calc(var(--hdr) + 14vh) var(--pad) 12vh;display:flex;flex-direction:column;gap:30vh}
+.chap.hero{min-height:100vh;padding-top:0;justify-content:center}
+.chap.last{min-height:115vh}
+.blk{position:relative;width:min(460px,36vw);color:var(--light);pointer-events:auto;text-shadow:0 1px 18px rgba(19,27,41,.35)}
+.blk.r{align-self:flex-end;width:min(380px,30vw)}
+.num{position:absolute;left:-6px;top:-92px;font:400 150px/1 var(--serif);color:transparent;-webkit-text-stroke:1px rgba(251,247,239,.42);pointer-events:none;letter-spacing:-.02em;text-shadow:none}
+.eyebrow{display:flex;align-items:center;gap:12px;font:500 11px/1.2 var(--sans);letter-spacing:.24em;text-transform:uppercase;margin-bottom:22px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.8}
+.blk h1,.blk h2{font-family:var(--serif);font-weight:400;line-height:1.04;letter-spacing:-.01em;text-wrap:balance}
+.blk h1{font-size:clamp(40px,4.3vw,66px)}
+.blk h2{font-size:clamp(32px,3.3vw,52px)}
+.blk em,.wl h2 em{font-style:italic}
+.blk p{font-size:17px;line-height:1.6;margin-top:20px;max-width:36ch;color:rgba(251,247,239,.92)}
+.blk .btn{margin-top:30px}
+.lnk{display:inline-flex;align-items:center;gap:10px;margin-top:22px;min-height:44px;font:500 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--light);border-bottom:1px solid rgba(251,247,239,.5)}
+.lnk:hover{border-color:var(--light)}
+.under{margin-top:16px;font-size:13px!important;letter-spacing:.02em;display:flex;flex-wrap:wrap;gap:6px 18px;color:rgba(251,247,239,.86)!important}
+.under span{display:inline-flex;align-items:center;gap:8px}
+.under span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--tang)}
+
+.card{background:rgba(19,27,41,.46);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(251,247,239,.22);padding:20px;text-shadow:none}
+.card .lab{font:500 10.5px/1.2 var(--sans);letter-spacing:.22em;text-transform:uppercase;opacity:.8;margin-bottom:14px}
+.card .big{font:400 28px/1.15 var(--serif)}
+.card .big em{font-style:italic}
+.spec{display:flex;gap:16px;align-items:center}
+.spec img{width:120px;aspect-ratio:4/3;object-fit:cover;flex:none;border:1px solid rgba(251,247,239,.18)}
+.spec ul{list-style:none;font-size:14px;line-height:1.5}
+.spec li{padding:6px 0;border-bottom:1px solid rgba(251,247,239,.16)}
+.spec li:last-child{border-bottom:0}
+.sw{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.sw a{text-decoration:none;color:var(--light);font-size:12.5px;line-height:1.3}
+.sw img{aspect-ratio:4/3;object-fit:cover;border:1px solid rgba(251,247,239,.18);margin-bottom:8px;transition:transform .5s}
+.sw a:hover img{transform:translateY(-3px)}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.pills span{display:inline-flex;align-items:center;min-height:36px;padding:0 16px;border:1px solid rgba(251,247,239,.55);border-radius:999px;font:500 12px/1 var(--sans);letter-spacing:.06em;background:rgba(19,27,41,.30);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);text-shadow:none}
+
+/* entrance: each block rises in as it scrolls up */
+.blk>*{transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .blk:not(.in)>*{opacity:0;transform:translateY(26px)}
+.blk.in>*:nth-child(2){transition-delay:.06s}.blk.in>*:nth-child(3){transition-delay:.12s}.blk.in>*:nth-child(4){transition-delay:.18s}.blk.in>*:nth-child(5){transition-delay:.24s}.blk.in>*:nth-child(6){transition-delay:.3s}
+
+/* ---------- waitlist ---------- */
+.wl{position:relative;z-index:2;background:var(--ivory);padding:clamp(88px,11vw,150px) var(--pad) clamp(72px,8vw,110px);text-align:center}
+.wl .eyebrow{justify-content:center;color:var(--ink-2)}
+.wl .eyebrow::after{content:"";width:28px;height:1px;background:currentColor;opacity:.8}
+.wl h2{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5vw,68px);line-height:1.04;letter-spacing:-.01em}
+.wl .sub{max-width:44ch;margin:18px auto 0;color:var(--ink-2);font-size:17px}
+.picks{border:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px);max-width:1180px;margin:clamp(44px,5vw,64px) auto 0}
+.pick{position:relative;display:block;cursor:pointer;background:var(--paper);border:1px solid var(--line);text-align:left;transition:border-color .3s,transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
+.pick input{position:absolute;opacity:0;width:1px;height:1px}
+.pick .ph{display:block;overflow:hidden;aspect-ratio:4/3;background:var(--stone)}
+.pick img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.pick:hover{transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(19,27,41,.35)}
+.pick:hover img{transform:scale(1.035)}
+.pick .meta{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border-top:1px solid var(--line);transition:background .3s,color .3s}
+.pick .nm{font-family:var(--serif);font-size:21px;line-height:1.15}
+.pick .ds{display:block;font-size:13px;color:var(--ink-2);margin-top:3px;transition:color .3s}
+.pick .dot{flex:none;width:20px;height:20px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center}
+.pick .dot::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--tang);transform:scale(0);transition:transform .25s}
+.pick:has(input:checked){border-color:var(--ink)}
+.pick:has(input:checked) .meta{background:var(--ink);color:var(--ivory)}
+.pick:has(input:checked) .ds{color:rgba(244,238,227,.78)}
+.pick:has(input:checked) .dot::after{transform:scale(1)}
+.pick:has(input:focus-visible){outline:2px solid var(--tang);outline-offset:3px}
+.reveal{opacity:0;transform:translateY(34px)}
+.reveal.in{opacity:1;transform:none;transition:opacity .9s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in:hover{transform:translateY(-4px)}
+
+.join{max-width:560px;margin:clamp(40px,5vw,56px) auto 0;text-align:left}
+.join label.lb{display:block;font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
+.row{display:flex;gap:10px}
+.row input{flex:1;min-width:0;min-height:52px;padding:0 16px;font:400 16px var(--sans);color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:0;-webkit-appearance:none;appearance:none}
+.row input:focus{outline:none;border-color:var(--ink)}
+.row input[aria-invalid=true]{border-color:#B3261E}
+.row .btn{min-height:52px;flex:none}
+.err{min-height:20px;margin-top:8px;font-size:14px;color:#B3261E}
+.promise{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:4px;font-size:14px;color:var(--ink-2)}
+.promise span{display:inline-flex;align-items:center;gap:8px}
+.promise svg{width:14px;height:14px;flex:none;color:var(--tang)}
+.promise .lead{color:var(--ink);font-weight:500}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.count{margin-top:28px;font-size:14px;color:var(--ink-2)}
+.count b{font-weight:500;color:var(--ink)}
+.thanks{display:none;max-width:560px;margin:clamp(40px,5vw,56px) auto 0;padding:36px 28px;border:1px solid var(--line);background:var(--paper)}
+.thanks h3{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.1}
+.thanks p{margin-top:12px;color:var(--ink-2)}
+.thanks .demo{font-size:13px;margin-top:18px}
+.wl.done .join,.wl.done .count{display:none}
+.wl.done .thanks{display:block}
+
+.ftr{background:var(--ink);color:var(--ivory);padding:40px var(--pad);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;font-size:13px}
+.ftr nav{display:flex;gap:22px}
+.ftr a{text-decoration:none;opacity:.78;min-height:44px;display:inline-flex;align-items:center}
+.ftr a:hover{opacity:1}
+.ftr .wm{font-size:20px}
+.ftr small{opacity:.6;font-size:13px}
+
+/* ---------- phones ---------- */
+/* layout is set by script: --fh film height, --ftop film top, --sh stage height */
+.has-strip .rail{bottom:auto;top:calc(var(--ftop) + var(--fh) + (var(--rem) - 11px) / 2)}
+.has-strip .cue{bottom:calc(var(--rem) + 40px)}
+/* taller windows (side panels, tablets, phones): the full film pinned on top, chapters scroll up underneath it */
+.stacked .hdr{background:var(--mari)}
+.stacked .hdr.solid{background:rgba(244,238,227,.96)}
+.stacked .stage{height:var(--sh);margin-bottom:0;z-index:3}
+.stacked .scrim,.stacked .cue{display:none}
+.stacked .rail{top:calc(var(--ftop) + var(--fh) + 16px);bottom:auto}
+.stacked .chap{min-height:calc(100svh - var(--sh));padding:30px var(--pad) 40px;gap:26px;justify-content:flex-start}
+.stacked .chap.hero{padding-top:30px}
+.stacked .chap.last{min-height:calc(100svh - var(--sh))}
+.stacked .blk,.stacked .blk.r{width:auto;max-width:640px;align-self:stretch;text-shadow:none}
+.stacked .num{display:none}
+.stacked .card{-webkit-backdrop-filter:none;backdrop-filter:none}
+.stacked .pills span{background:transparent}
+/* marigold surfaces: dark text, cream cards */
+.has-strip .rail,.stacked .rail{color:var(--ink)}
+.has-strip .bar,.stacked .bar{background:rgba(19,27,41,.25)}
+.has-strip .bar i,.stacked .bar i{background:var(--ink)}
+.stacked .blk{color:var(--ink)}
+.stacked .blk p{color:rgba(19,27,41,.86)}
+.stacked .under{color:var(--ink)!important}
+.stacked .under span::before{background:var(--ink)}
+.stacked .btn-fill{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.stacked .btn-fill:hover{background:transparent;color:var(--ink)}
+.stacked .lnk{color:var(--ink);border-color:rgba(19,27,41,.5)}
+.stacked .card{background:var(--cream);border-color:rgba(19,27,41,.12);color:var(--ink)}
+.stacked .spec li{border-bottom-color:rgba(19,27,41,.12)}
+.stacked .spec img,.stacked .sw img{border-color:rgba(19,27,41,.12)}
+.stacked .sw a{color:var(--ink)}
+.stacked .pills span{border-color:var(--ink);color:var(--ink)}
+.compact .eyebrow{margin-bottom:12px;font-size:10px}
+.compact .blk h1{font-size:clamp(30px,8.6vw,40px)}
+.compact .blk h2{font-size:clamp(27px,7.6vw,36px)}
+.compact .blk p{font-size:15px;margin-top:10px}
+.compact .blk .btn{margin-top:16px}
+.compact .under{margin-top:12px}
+@media (max-width:760px){
+  :root{--hdr:58px}
+  .wm{font-size:20px}
+  .hdr .btn{font-size:10px;letter-spacing:.13em;padding:0 13px}
+  .blk .btn{width:100%}
+  .hide-s{display:none}
+  .rail{font-size:9.5px;letter-spacing:.16em;gap:10px}
+  .rail ol{gap:14px}
+  .rail li b{margin-right:5px}
+  .bar{display:none}
+  .spec img{width:96px}
+  .card .big{font-size:24px}
+  .picks{grid-template-columns:1fr;max-width:460px}
+  .row{flex-direction:column}
+  .row .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  .cue i{animation:none}
+  .reveal{opacity:1;transform:none}
+  .pick,.pick img,.blk>*{transition:none}
+  .js .blk:not(.in)>*{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <a class="wm" href="#top" aria-label="VELLUVO, back to top">VELLU<span class="v">V</span>O</a>
+  <a class="btn btn-sm" href="#waitlist">Notify me at launch</a>
+</header>
+
+<main id="top">
+  <section class="film" id="film" aria-label="The Tilt">
+    <div class="stage" id="stage">
+      <img class="poster" id="poster" src="media/poster.webp" alt="" aria-hidden="true">
+      <video id="v" muted playsinline preload="auto" aria-hidden="true" disablepictureinpicture></video>
+      <div class="scrim"></div>
+      <p class="sr">A model in sage and ivory couture leaps from a striped rooftop in a pastel city. Her tangerine-lens sunglasses lift away, a black cat leaps from a window after a falling lens, and she lands on a limestone street where the glasses settle back on her face.</p>
+      <div class="rail" aria-hidden="true">
+        <ol><li data-s="0" data-e="5"><b>01</b>The leap</li><li data-s="5" data-e="13.2"><b>02</b>The chase</li><li data-s="13.2" data-e="99"><b>03</b>The landing</li></ol>
+        <div class="bar"><i id="bar"></i></div>
+      </div>
+      <div class="cue" id="cue" aria-hidden="true">Scroll<i></i></div>
+    </div>
+
+    <div class="chapters">
+      <article class="chap hero" data-t="2.4">
+        <div class="blk in">
+          <p class="eyebrow">Introducing The Tilt</p>
+          <h1>One pair changes <em>the whole look.</em></h1>
+          <p class="lede">A sculptural cat-eye in three unexpected colorways. <span class="hide-s">Join the waitlist and hear first when it launches.</span></p>
+          <a class="btn btn-fill" href="#waitlist">Notify me at launch</a>
+          <p class="under"><span>One email when The Tilt launches</span><span>2,418 already waiting</span></p>
+        </div>
+      </article>
+
+      <article class="chap" data-t="7">
+        <div class="blk">
+          <span class="num" aria-hidden="true">01</span>
+          <p class="eyebrow">The shape</p>
+          <h2>Corners that lift, <em>so the frame does the talking.</em></h2>
+          <p>The Tilt starts as a classic cat-eye, then sharpens at the temples. Each lift is shaped and polished by hand, so every pair catches the light a little differently.</p>
+        </div>
+        <div class="blk">
+          <div class="card">
+            <p class="lab">Inside the frame</p>
+            <div class="spec">
+              <img src="media/sage-tangerine.webp" width="1200" height="900" alt="The Tilt in sage with tangerine lenses">
+              <ul><li>Hand-polished acetate</li><li>Corners lifted 12&deg;</li><li>52 &#9633; 18 &middot; 145 mm</li></ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="chap" data-t="11.4">
+        <div class="blk">
+          <span class="num" aria-hidden="true">02</span>
+          <p class="eyebrow">The color</p>
+          <h2>Color <em>worth chasing.</em></h2>
+          <p>Translucent frames with saturated lenses. Every pair is built on a clash: one soft tone, one loud one.</p>
+        </div>
+        <div class="blk">
+          <div class="card">
+            <p class="lab">Three pairings, no neutrals</p>
+            <div class="sw">
+              <a href="#waitlist"><img src="media/sage-tangerine.webp" width="1200" height="900" alt="">Sage / Tangerine</a>
+              <a href="#waitlist"><img src="media/cornflower-citron.webp" width="1200" height="900" alt="">Cornflower / Citron</a>
+              <a href="#waitlist"><img src="media/apricot-petrol.webp" width="1200" height="900" alt="">Apricot / Petrol</a>
+            </div>
+          </div>
+          <a class="lnk" href="#waitlist">Pick your pair &rarr;</a>
+        </div>
+      </article>
+
+      <article class="chap" data-t="16">
+        <div class="blk">
+          <span class="num" aria-hidden="true">03</span>
+          <p class="eyebrow">The fit</p>
+          <h2>It lands <em>right where it should.</em></h2>
+          <p>Lenses set firmly in the frame, and five-barrel hinges hold the fit from the first step to the last.</p>
+        </div>
+        <div class="blk">
+          <div class="card">
+            <p class="big">Bold from across the street. <em>Light enough to forget.</em></p>
+          </div>
+          <div class="pills" style="margin-top:16px"><span>Five-barrel hinges</span><span>Featherweight acetate</span><span>Case and cloth included</span></div>
+        </div>
+      </article>
+
+      <article class="chap last" data-t="22.1">
+        <div class="blk">
+          <p class="eyebrow">The Tilt by VELLUVO</p>
+          <h2>The world looks different <em>from here.</em></h2>
+          <p>Three colorways. One launch. Be the first to know.</p>
+          <a class="btn btn-fill" href="#waitlist">Notify me at launch</a>
+          <div class="pills" style="margin-top:22px"><span>One email at launch</span><span>Color pick optional</span><span>2,418 already waiting</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="wl" id="waitlist" aria-labelledby="wl-h">
+    <p class="eyebrow">The Tilt &middot; three colorways</p>
+    <h2 id="wl-h">Which pair would <em>you</em> wear?</h2>
+    <p class="sub">Pick a favorite if you have one. It tells us how many of each to make first.</p>
+
+    <form id="form" novalidate>
+      <fieldset class="picks">
+        <legend class="sr">Choose a colorway (optional)</legend>
+        <label class="pick reveal">
+          <input type="radio" name="colorway" value="Sage / Tangerine">
+          <span class="ph"><img src="media/sage-tangerine.webp" width="1200" height="900" alt="The Tilt in a pale sage translucent frame with tangerine lenses, on a limestone plinth"></span>
+          <span class="meta"><span><span class="nm">Sage / Tangerine</span><span class="ds">The one from the film</span></span><span class="dot"></span></span>
+        </label>
+        <label class="pick reveal">
+          <input type="radio" name="colorway" value="Cornflower / Citron">
+          <span class="ph"><img src="media/cornflower-citron.webp" width="1200" height="900" alt="The Tilt in a cornflower blue translucent frame with citron yellow lenses, on a limestone plinth"></span>
+          <span class="meta"><span><span class="nm">Cornflower / Citron</span><span class="ds">Bright on bright</span></span><span class="dot"></span></span>
+        </label>
+        <label class="pick reveal">
+          <input type="radio" name="colorway" value="Apricot / Petrol">
+          <span class="ph"><img src="media/apricot-petrol.webp" width="1200" height="900" alt="The Tilt in an apricot translucent frame with petrol teal lenses, on a limestone plinth"></span>
+          <span class="meta"><span><span class="nm">Apricot / Petrol</span><span class="ds">Warm frame, cool lens</span></span><span class="dot"></span></span>
+        </label>
+      </fieldset>
+
+      <div class="join">
+        <label class="lb" for="email">Email address</label>
+        <div class="row">
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="err promise">
+          <button class="btn btn-ink" type="submit">Notify me at launch</button>
+        </div>
+        <p class="err" id="err" role="alert"></p>
+        <p class="promise" id="promise">
+          <span class="lead"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>One email when The Tilt launches.</span>
+          <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Your pick isn't an order</span>
+          <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Unsubscribe in one click</span>
+        </p>
+        <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+        <input type="hidden" name="source">
+      </div>
+      <p class="count"><b>2,418</b> people are already on the waitlist.</p>
+    </form>
+
+    <div class="thanks" id="thanks" role="status" tabindex="-1">
+      <h3>You're on the list.</h3>
+      <p id="thanks-line">We'll send one email when The Tilt launches.</p>
+      <p class="demo">Demo page: no email was sent or stored.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <a class="wm" href="#top" aria-label="VELLUVO, back to top">VELLU<span class="v">V</span>O</a>
+  <nav aria-label="Legal"><a href="#">Privacy</a><a href="#">Terms</a></nav>
+  <small>&copy; 2026 VELLUVO</small>
+</footer>
+
+<script>
+(() => {
+  const FORM_ENDPOINT = ""; // set to the client's form service or CRM webhook to go live
+  const INTRO = 2.4;        // seconds the film plays on its own when the page loads
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const root = document.documentElement; root.classList.add("js");
+
+  const v = document.getElementById("v"), poster = document.getElementById("poster");
+  const film = document.getElementById("film"), stage = document.getElementById("stage"), hdr = document.getElementById("hdr");
+  const chaps = [...document.querySelectorAll(".chap")], blks = [...document.querySelectorAll(".blk")];
+  const railItems = [...document.querySelectorAll(".rail li")];
+  const bar = document.getElementById("bar"), cue = document.getElementById("cue");
+  const wl = document.getElementById("waitlist");
+
+  // fit the whole film; on wide windows the chapters scroll over it, on taller ones they scroll up underneath it
+  let anchors = [];
+  const layout = () => {
+    const W = innerWidth, H = innerHeight, hh = hdr.offsetHeight;
+    const full = W * 9 / 16, avail = H - hh;
+    const stacked = avail - full >= 270;
+    const fh = Math.min(full, avail), rem = Math.max(avail - fh, 0);
+    root.style.setProperty("--fh", fh + "px");
+    root.style.setProperty("--ftop", hh + "px");
+    root.style.setProperty("--rem", rem + "px");
+    root.style.setProperty("--sh", (hh + fh + 40) + "px");
+    root.classList.toggle("stacked", stacked);
+    root.classList.toggle("compact", stacked && rem < 420);
+    root.classList.toggle("has-strip", !stacked && rem >= 44);
+    // the scroll position where each chapter is being read, paired with its moment in the film
+    const read = stacked ? hh + fh + 40 + 30 : H * 0.42;
+    anchors = chaps.map((c, i) => {
+      const b = c.querySelector(".blk"), y = b.getBoundingClientRect().top + scrollY;
+      return [i === 0 ? 0 : Math.max(y - read, 1), +c.dataset.t];
+    });
+  };
+  addEventListener("resize", layout);
+
+  // one uncropped film, pulled into memory so scroll seeking works on any host
+  let D = 22.1, cur = 0, introDone = reduce, started = false;
+  v.src = "media/film.mp4";
+  fetch("media/film.mp4").then(r => r.ok ? r.blob() : null).then(b => {
+    if (!b) return;
+    const at = v.currentTime, playing = !v.paused;
+    v.addEventListener("loadedmetadata", () => {
+      v.currentTime = at;
+      if (playing && !introDone) v.play().catch(() => { introDone = true; });
+    }, { once: true });
+    v.src = URL.createObjectURL(b);
+  }).catch(() => {});
+  v.addEventListener("loadedmetadata", () => { D = v.duration || D; });
+  v.addEventListener("loadeddata", () => { poster.style.opacity = 0; });
+
+  // the page opens in motion: play the leap, then hand the film to the scroll
+  v.addEventListener("canplay", () => {
+    if (started || reduce) return; started = true;
+    const p = v.play(); if (p && p.catch) p.catch(() => { introDone = true; });
+  }, { once: true });
+  addEventListener("touchstart", () => { if (v.paused && !introDone) v.play().catch(() => {}); }, { once: true, passive: true });
+  if (reduce) { v.addEventListener("loadeddata", () => { v.currentTime = INTRO; }, { once: true }); cur = INTRO; }
+
+  const timeAt = y => {
+    if (!anchors.length) return INTRO;
+    if (y <= anchors[0][0]) return anchors[0][1];
+    for (let i = 1; i < anchors.length; i++) {
+      const [y0, t0] = anchors[i - 1], [y1, t1] = anchors[i];
+      if (y <= y1) {
+        const t = t0 + (t1 - t0) * (y - y0) / Math.max(y1 - y0, 1);
+        return reduce ? (y - y0 < (y1 - y0) / 2 ? t0 : t1) : t;
+      }
+    }
+    return Math.min(anchors[anchors.length - 1][1], D - 0.03);
+  };
+
+  const tick = () => {
+    if (!introDone) {
+      if (v.currentTime >= INTRO) { v.pause(); introDone = true; }
+      cur = v.currentTime;
+    } else {
+      const target = Math.min(timeAt(scrollY), D - 0.03);
+      cur += (target - cur) * (reduce ? 1 : 0.14);
+      if (Math.abs(cur - v.currentTime) > 0.02 && !v.seeking && v.readyState >= 1) v.currentTime = cur;
+    }
+    const t = cur, H = innerHeight, stacked = root.classList.contains("stacked");
+    const fadeTop = stacked ? stage.offsetHeight : hdr.offsetHeight;
+    // blocks rise in as they arrive and fade as they slide under the header or the film
+    blks.forEach(b => {
+      const r = b.getBoundingClientRect();
+      if (!b.classList.contains("in") && r.top < H * 0.86) b.classList.add("in");
+      const o = Math.min(Math.max((r.bottom - fadeTop - 10) / 140, 0), 1);
+      b.style.opacity = o.toFixed(3);
+    });
+    railItems.forEach(c => c.classList.toggle("on", t >= +c.dataset.s && t < +c.dataset.e));
+    bar.style.transform = `scaleX(${Math.min(Math.max((t - INTRO) / (D - INTRO), 0), 1).toFixed(4)})`;
+    cue.classList.toggle("gone", scrollY > 40);
+    hdr.classList.toggle("solid", wl.getBoundingClientRect().top < hdr.offsetHeight + 1);
+    requestAnimationFrame(tick);
+  };
+  layout();
+  addEventListener("load", layout);
+  if (document.fonts) document.fonts.ready.then(layout);
+  requestAnimationFrame(tick);
+
+  // colorway cards rise in when the waitlist arrives
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), { threshold: 0.2 });
+  document.querySelectorAll(".reveal").forEach((el, i) => { el.style.transitionDelay = (i * 0.12) + "s"; io.observe(el); });
+
+  // a chapter link can pre-select a colorway
+  document.querySelectorAll(".sw a").forEach((a, i) => a.addEventListener("click", () => {
+    const r = document.querySelectorAll("input[name=colorway]")[i]; if (r) r.checked = true;
+  }));
+
+  // keep the traffic source with the lead
+  const form = document.getElementById("form"), email = document.getElementById("email"), err = document.getElementById("err");
+  const q = new URLSearchParams(location.search), keep = {};
+  ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","fbclid","ttclid"].forEach(k => { if (q.get(k)) keep[k] = q.get(k); });
+  form.source.value = JSON.stringify(keep);
+
+  email.addEventListener("input", () => { if (email.getAttribute("aria-invalid") === "true" && email.validity.valid) { email.removeAttribute("aria-invalid"); err.textContent = ""; } });
+  form.addEventListener("submit", async ev => {
+    ev.preventDefault();
+    if (!email.value.trim() || !email.validity.valid) {
+      email.setAttribute("aria-invalid", "true");
+      err.textContent = email.value.trim() ? "That email doesn't look right. Check it and try again." : "Add your email so we can tell you when The Tilt launches.";
+      email.focus(); return;
+    }
+    if (form.company.value) return; // bot
+    const pick = (form.querySelector("input[name=colorway]:checked") || {}).value || "";
+    if (FORM_ENDPOINT) { try { await fetch(FORM_ENDPOINT, { method: "POST", body: new FormData(form) }); } catch (e) {} }
+    document.getElementById("thanks-line").textContent = pick
+      ? `We'll send one email when The Tilt launches. Your pick: ${pick}.`
+      : "We'll send one email when The Tilt launches.";
+    wl.classList.add("done");
+    const th = document.getElementById("thanks"); th.focus({ preventScroll: true });
+    th.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+  });
+})();
+</script>
+</body>
+</html>
