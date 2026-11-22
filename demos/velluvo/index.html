@@ -6,7 +6,7 @@
 <title>VELLUVO | The Tilt, coming soon</title>
 <meta name="description" content="Meet The Tilt by VELLUVO, a sculptural cat-eye in three unexpected colorways. Join the waitlist for one email at launch.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#8DAEAB">
+<meta name="theme-color" content="#AA5349">
 <link rel="preload" href="fonts/bodoni-moda-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/dm-sans-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -18,7 +18,7 @@
 
 :root{
   --ivory:#F4EEE3; --paper:#FAF7F1; --ink:#131B29; --ink-2:#4A505C; --line:#D9CDB8;
-  --stone:#E7DAC5; --tang:#E2702A; --light:#FBF7EF; --mari:#8DAEAB; --cream:#FBF3E4;
+  --stone:#E7DAC5; --tang:#E2702A; --light:#FBF7EF; --mari:#AA5349; --cream:#FBF3E4;
   --serif:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
   --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --hdr:64px; --pad:clamp(20px,5vw,72px);
@@ -228,6 +228,19 @@ a{color:inherit}
   .pick,.pick img,.blk>*{transition:none}
   .js .blk:not(.in)>*{opacity:1;transform:none}
 }
+
+/* light text on the deep rose frame */
+.hdr{color:var(--cream)} .hdr .btn:hover{background:var(--cream);color:var(--mari);border-color:var(--cream)}
+.has-strip .rail,.stacked .rail{color:var(--cream)}
+.has-strip .bar,.stacked .bar{background:rgba(251,243,228,.3)} .has-strip .bar i,.stacked .bar i{background:var(--cream)}
+.stacked .blk{color:var(--cream)} .stacked .blk p{color:rgba(251,243,228,.9)}
+.stacked .under{color:var(--cream)!important} .stacked .under span::before{background:var(--cream)}
+.stacked .btn-fill{background:var(--cream);color:var(--ink);border-color:var(--cream)} .stacked .btn-fill:hover{background:transparent;color:var(--cream)}
+.stacked .lnk{color:var(--cream);border-color:rgba(251,243,228,.6)}
+.stacked .pills span{border-color:var(--cream);color:var(--cream)}
+.hdr.solid{color:var(--ink)}
+.stacked .card,.stacked .card p{color:var(--ink)}
+.stacked .card .lab{color:rgba(19,27,41,.7)}
 </style>
 </head>
 <body>
