@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VELLUVO | The Tilt, coming soon</title>
-<meta name="description" content="Meet The Tilt by VELLUVO, a sculptural cat-eye in three unexpected colorways. Join the waitlist for one email at launch.">
+<meta name="description" content="Meet The Tilt by VELLUVO, a sculptural cat-eye in three unexpected colorways. Join the waitlist for 24-hour private early access before launch.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#AA5349">
 <link rel="preload" href="fonts/bodoni-moda-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -241,13 +241,17 @@ a{color:inherit}
 .hdr.solid{color:var(--ink)}
 .stacked .card,.stacked .card p{color:var(--ink)}
 .stacked .card .lab{color:rgba(19,27,41,.7)}
+
+/* soft dark scrim behind chapters 01 and 02 (wide layout only; the film stays clear on the right) */
+.blk.sc::before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:-150px -150px -110px -150px;
+  background:radial-gradient(ellipse closest-side at 44% 50%,rgba(19,27,41,.62) 0%,rgba(19,27,41,.46) 52%,rgba(19,27,41,.2) 80%,rgba(19,27,41,0) 100%)}
+.stacked .blk.sc::before{display:none}
 </style>
 </head>
 <body>
 
 <header class="hdr" id="hdr">
   <a class="wm" href="#top" aria-label="VELLUVO, back to top">VELLU<span class="v">V</span>O</a>
-  <a class="btn btn-sm" href="#waitlist">Notify me at launch</a>
 </header>
 
 <main id="top">
@@ -268,15 +272,15 @@ a{color:inherit}
       <article class="chap hero" data-t="2.4">
         <div class="blk in">
           <p class="eyebrow">Introducing The Tilt</p>
-          <h1>One pair changes <em>the whole look.</em></h1>
+          <h1>One pair of frames <em>changes everything.</em></h1>
           <p class="lede">A sculptural cat-eye in three unexpected colorways. <span class="hide-s">Join the waitlist and hear first when it launches.</span></p>
           <a class="btn btn-fill" href="#waitlist">Notify me at launch</a>
-          <p class="under"><span>One email when The Tilt launches</span><span>2,418 already waiting</span></p>
+          <p class="under"><span>Get 24-hour private early access before The Tilt drops to the public.</span><span>2,418 already waiting</span></p>
         </div>
       </article>
 
       <article class="chap" data-t="7">
-        <div class="blk">
+        <div class="blk sc">
           <span class="num" aria-hidden="true">01</span>
           <p class="eyebrow">The shape</p>
           <h2>Corners that lift, <em>so the frame does the talking.</em></h2>
@@ -294,7 +298,7 @@ a{color:inherit}
       </article>
 
       <article class="chap" data-t="11.4">
-        <div class="blk">
+        <div class="blk sc">
           <span class="num" aria-hidden="true">02</span>
           <p class="eyebrow">The color</p>
           <h2>Color <em>worth chasing.</em></h2>
@@ -334,7 +338,7 @@ a{color:inherit}
           <h2>The world looks different <em>from here.</em></h2>
           <p>Three colorways. One launch. Be the first to know.</p>
           <a class="btn btn-fill" href="#waitlist">Notify me at launch</a>
-          <div class="pills" style="margin-top:22px"><span>One email at launch</span><span>Color pick optional</span><span>2,418 already waiting</span></div>
+          <div class="pills" style="margin-top:22px"><span>24-hour early access</span><span>Color pick optional</span><span>2,418 already waiting</span></div>
         </div>
       </article>
     </div>
@@ -343,7 +347,7 @@ a{color:inherit}
   <section class="wl" id="waitlist" aria-labelledby="wl-h">
     <p class="eyebrow">The Tilt &middot; three colorways</p>
     <h2 id="wl-h">Which pair would <em>you</em> wear?</h2>
-    <p class="sub">Pick a favorite if you have one. It tells us how many of each to make first.</p>
+    <p class="sub">Select your favorite colorway to secure your early access.</p>
 
     <form id="form" novalidate>
       <fieldset class="picks">
@@ -369,11 +373,11 @@ a{color:inherit}
         <label class="lb" for="email">Email address</label>
         <div class="row">
           <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="err promise">
-          <button class="btn btn-ink" type="submit">Notify me at launch</button>
+          <button class="btn btn-ink" type="submit">Get early access</button>
         </div>
         <p class="err" id="err" role="alert"></p>
         <p class="promise" id="promise">
-          <span class="lead"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>One email when The Tilt launches.</span>
+          <span class="lead"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Get 24-hour private early access before The Tilt drops to the public.</span>
           <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Your pick isn't an order</span>
           <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Unsubscribe in one click</span>
         </p>
@@ -385,7 +389,7 @@ a{color:inherit}
 
     <div class="thanks" id="thanks" role="status" tabindex="-1">
       <h3>You're on the list.</h3>
-      <p id="thanks-line">We'll send one email when The Tilt launches.</p>
+      <p id="thanks-line">You'll hear first, with 24-hour private early access before The Tilt drops to the public.</p>
       <p class="demo">Demo page: no email was sent or stored.</p>
     </div>
   </section>
@@ -521,15 +525,15 @@ a{color:inherit}
     ev.preventDefault();
     if (!email.value.trim() || !email.validity.valid) {
       email.setAttribute("aria-invalid", "true");
-      err.textContent = email.value.trim() ? "That email doesn't look right. Check it and try again." : "Add your email so we can tell you when The Tilt launches.";
+      err.textContent = email.value.trim() ? "That email doesn't look right. Check it and try again." : "Add your email so we can send your early access.";
       email.focus(); return;
     }
     if (form.company.value) return; // bot
     const pick = (form.querySelector("input[name=colorway]:checked") || {}).value || "";
     if (FORM_ENDPOINT) { try { await fetch(FORM_ENDPOINT, { method: "POST", body: new FormData(form) }); } catch (e) {} }
     document.getElementById("thanks-line").textContent = pick
-      ? `We'll send one email when The Tilt launches. Your pick: ${pick}.`
-      : "We'll send one email when The Tilt launches.";
+      ? `You'll hear first, with 24-hour private early access before The Tilt drops to the public. Your pick: ${pick}.`
+      : "You'll hear first, with 24-hour private early access before The Tilt drops to the public.";
     wl.classList.add("done");
     const th = document.getElementById("thanks"); th.focus({ preventScroll: true });
     th.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
