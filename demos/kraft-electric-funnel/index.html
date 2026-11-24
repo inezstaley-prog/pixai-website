@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kraft Electric: Ad-to-Landing-Page Funnel | PixAI AI Solutions</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Concept funnel: a 15 second vertical video ad, a message-matched landing page and instant speed-to-lead follow-up for a Pierce County electrician.">
+<style>
+/* ---------- fonts (self-hosted) ---------- */
+@font-face{font-family:"Barlow";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/barlow-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:500;font-style:normal;font-display:swap;src:url(fonts/barlow-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:600;font-style:normal;font-display:swap;src:url(fonts/barlow-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-weight:700;font-style:normal;font-display:swap;src:url(fonts/barlow-condensed-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-weight:800;font-style:normal;font-display:swap;src:url(fonts/barlow-condensed-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Playfair Display";font-weight:700;font-style:normal;font-display:swap;src:url(fonts/playfair-display-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Playfair Display";font-weight:400;font-style:italic;font-display:swap;src:url(fonts/playfair-display-latin-400-italic.woff2) format("woff2")}
+@font-face{font-family:"Montserrat";font-weight:500;font-style:normal;font-display:swap;src:url(fonts/montserrat-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Montserrat";font-weight:600;font-style:normal;font-display:swap;src:url(fonts/montserrat-latin-600-normal.woff2) format("woff2")}
+
+/* ---------- Kraft landing page palette (A: navy + soft amber, chosen by Inez 2026-11-23) ---------- */
+body{
+  --navy-d:#0F2038; --navy:#17304F; --accent:#E2A829; --ink:#0F2038;
+  --page:#FFFFFF; --soft:#F2F4F7; --surface:#FFFFFF; --text:#1E293B; --muted:#475569; --line:#D9DFE7; --err:#B42318;
+}
+
+/* ---------- showcase shell (PixAI system) ---------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:#0A0A0A;color:#F4EFE6;font-family:"Montserrat",system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+img,video{max-width:100%;display:block}
+img{height:auto}
+a{color:inherit}
+.gold{color:#C9A24B}
+.wrap{max-width:1320px;margin:0 auto;padding:0 24px}
+.site-head{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid rgba(201,162,75,.25)}
+.brand{font:600 13px/1 "Montserrat";letter-spacing:.32em;text-transform:uppercase;text-decoration:none}
+.brand span{color:#C9A24B}
+.site-head a.back{font:500 11px/1 "Montserrat";letter-spacing:.22em;text-transform:uppercase;text-decoration:none;color:#C9A24B;padding:14px 0}
+.cs-head{padding:40px 0 28px;max-width:980px}
+.eyebrow{display:flex;align-items:center;gap:14px;font:600 11px/1 "Montserrat";letter-spacing:.3em;text-transform:uppercase;color:#C9A24B;margin:0 0 22px}
+.eyebrow::before{content:"";width:36px;height:1px;background:#C9A24B}
+.cs-head h1{font:700 clamp(2.1rem,4.6vw,3.6rem)/1.08 "Playfair Display",serif;margin:0 0 20px;letter-spacing:-.01em}
+.cs-head h1 em{font-style:italic;font-weight:400;color:#C9A24B}
+.cs-head p.sub{font:500 clamp(1rem,1.5vw,1.15rem)/1.6 "Montserrat";color:#d8d2c4;margin:0;max-width:760px}
+.funnel{list-style:none;margin:0 0 44px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(201,162,75,.35)}
+.funnel li{position:relative;padding:22px 26px 24px;border-right:1px solid rgba(201,162,75,.35)}
+.funnel li:last-child{border-right:0}
+.funnel .n{font:700 2rem/1 "Playfair Display",serif;color:#C9A24B;display:block;margin-bottom:8px}
+.funnel .k{font:600 10px/1 "Montserrat";letter-spacing:.28em;text-transform:uppercase;color:#9a9486;display:block;margin-bottom:10px}
+.funnel h2{font:600 1.05rem/1.3 "Montserrat";margin:0 0 10px}
+.funnel p{margin:0;font-size:.92rem;line-height:1.6;color:#cfc9bb}
+.funnel li:not(:last-child)::after{content:"";position:absolute;right:-9px;top:50%;width:16px;height:16px;background:#0A0A0A;border-top:1px solid rgba(201,162,75,.7);border-right:1px solid rgba(201,162,75,.7);transform:translateY(-50%) rotate(45deg);z-index:2}
+
+.stage{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;align-items:start;padding-bottom:72px}
+@media (min-width:1000px){.stage{grid-template-columns:clamp(280px,26vw,360px) minmax(0,1fr);gap:44px}}
+.phone-col{display:flex;flex-direction:column;align-items:center}
+@media (min-width:1000px){.phone-col{position:sticky;top:20px}}
+.phone-w{width:min(340px,100%,calc((100vh - 170px)*.5625))}
+@media (min-width:1000px){.phone-w{width:min(100%,calc((100vh - 170px)*.5625))}}
+.phone{position:relative;background:#050505;border:1px solid #3a3a3a;border-radius:44px;padding:9px;box-shadow:0 30px 70px rgba(0,0,0,.6),inset 0 0 0 2px #151515}
+.screen{position:relative;border-radius:36px;overflow:hidden;background:#000;aspect-ratio:9/16}
+.screen video{width:100%;height:100%;object-fit:cover}
+.notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:28%;height:20px;background:#050505;border-radius:12px;z-index:4;pointer-events:none}
+.playbtn{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:14px;padding:0 20px 56px;border:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.72));color:#fff;cursor:pointer;font:600 13px/1.3 "Montserrat";letter-spacing:.08em;text-transform:uppercase}
+.playbtn .disc{width:76px;height:76px;border-radius:50%;background:#C9A24B;color:#0A0A0A;display:grid;place-items:center;box-shadow:0 0 0 8px rgba(201,162,75,.25)}
+.playbtn .disc svg{width:30px;height:30px;margin-left:4px}
+.playbtn:focus-visible,.soundbtn:focus-visible{outline:3px solid #fff;outline-offset:-5px}
+.soundbtn{position:absolute;top:40px;right:12px;z-index:3;min-height:44px;padding:0 14px;border-radius:22px;border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.55);color:#fff;font:600 11px/1 "Montserrat";letter-spacing:.1em;text-transform:uppercase;display:none;align-items:center;gap:8px;cursor:pointer}
+.soundbtn.on{display:flex}
+.soundbtn svg{width:18px;height:18px}
+.cap{margin:18px 0 0;text-align:center;font:500 11px/1.5 "Montserrat";letter-spacing:.16em;text-transform:uppercase;color:#C9A24B;max-width:340px}
+details.vo{margin-top:14px;max-width:340px;width:100%;border:1px solid rgba(201,162,75,.3);padding:0 16px}
+details.vo summary{cursor:pointer;min-height:48px;display:flex;align-items:center;font:600 11px/1.3 "Montserrat";letter-spacing:.16em;text-transform:uppercase;color:#F4EFE6}
+details.vo summary:focus-visible{outline:2px solid #C9A24B}
+details.vo p{margin:0 0 16px;font-size:.88rem;line-height:1.65;color:#cfc9bb}
+
+.demo-col{min-width:0}
+.demo-label{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 14px;font:600 11px/1.4 "Montserrat";letter-spacing:.2em;text-transform:uppercase;color:#C9A24B}
+.demo-label .dot{width:9px;height:9px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 4px rgba(61,220,132,.2)}
+.demo-label span.hint{color:#9a9486;letter-spacing:.1em}
+.frame{border:1px solid rgba(201,162,75,.5);background:var(--page);overflow:hidden;border-radius:6px}
+.site-foot{border-top:1px solid rgba(201,162,75,.25);padding:28px 0 40px;font:500 11px/1.7 "Montserrat";letter-spacing:.14em;text-transform:uppercase;color:#9a9486}
+
+
+/* site nav (same as the main PixAI pages) */
+nav.top{position:sticky;top:0;z-index:100;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px clamp(16px,2vw,40px);padding:34px clamp(20px,4vw,72px) 22px;background:rgba(0,0,0,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(201,162,75,.2)}
+.plogo{display:block;width:172px;height:64px;overflow:hidden;position:relative;flex-shrink:0}
+.plogo img{position:absolute;width:213px;height:auto;left:-22px;top:-37px;max-width:none}
+.plinks{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;row-gap:14px;column-gap:clamp(14px,2.4vw,44px);padding-top:10px}
+.plinks a{font:500 clamp(11px,1.05vw,13px)/1 "Montserrat",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#F4EFE6;white-space:nowrap;text-decoration:none;transition:color .3s}
+.plinks a:hover,.plinks a.on{color:#C9A24B}
+.plinks a.cta{font-weight:600;color:#C9A24B;border:1px solid rgba(201,162,75,.7);padding:13px clamp(16px,1.8vw,24px);transition:background .3s,color .3s}
+.plinks a.cta:hover{background:#C9A24B;color:#000}
+@media (max-width:760px){
+  nav.top{flex-direction:column;align-items:center;gap:8px;padding:12px 16px 10px}
+  .plogo{width:118px;height:44px}.plogo img{width:146px;left:-15px;top:-25px}
+  .plinks{justify-content:center;column-gap:9px;row-gap:6px;padding-top:0}
+  .plinks a{font-size:10px;letter-spacing:.06em}.plinks a.cta{display:none}
+}
+
+/* ---------- Kraft landing page ---------- */
+.lp{container-type:inline-size;container-name:lp;background:var(--page);color:var(--text);font-family:"Barlow",system-ui,sans-serif;font-size:17px;line-height:1.55}
+.lp h1,.lp h2,.lp h3{font-family:"Barlow Condensed","Barlow",sans-serif;font-weight:800;line-height:1.04;margin:0;letter-spacing:.005em}
+:where(.lp) p{margin:0}
+.lp *:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.lp .on-dark *:focus-visible{outline-color:#fff}
+.lp-head{background:var(--navy-d);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,3.4cqw,28px)}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+.logo img{height:46px;width:auto;display:block}
+.area{font:600 .78rem/1.3 "Barlow";letter-spacing:.14em;text-transform:uppercase;color:#d5deea;text-align:right;max-width:34ch;letter-spacing:.1em}
+.area::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:8px}
+@container lp (max-width:420px){.area{display:none}}
+
+.hero{position:relative;background:var(--navy-d);color:#fff}
+.hero-img{position:relative;height:clamp(240px,62cqw,300px);overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 58%}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,color-mix(in srgb,var(--navy-d) 70%,transparent) 0,transparent 30%,transparent 55%,var(--navy-d) 100%)}
+.hero-copy{position:relative;padding:0 clamp(18px,5cqw,40px) 96px;margin-top:-30px;z-index:1}
+.rate{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;font:600 .82rem/1 "Barlow";letter-spacing:.04em;color:#fff;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:8px 14px 8px 12px;margin-bottom:16px;background:color-mix(in srgb,var(--navy-d) 70%,transparent)}
+.stars{display:inline-flex;gap:2px}
+.stars svg{width:15px;height:15px;fill:var(--accent)}
+.kicker{display:block;font:700 .8rem/1 "Barlow";letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.hero h1{font-size:clamp(2.35rem,10.5cqw,3.4rem);margin-bottom:16px}
+.hero .sub{font-size:1.05rem;line-height:1.55;color:#dbe4ef;max-width:44ch;margin-bottom:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border:0;border-radius:10px;background:var(--accent);color:var(--ink);font:700 1.05rem/1.2 "Barlow";letter-spacing:.02em;cursor:pointer;text-decoration:none;text-align:center;transition:transform .15s,filter .15s}
+.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.block{width:100%}
+.btn.ghost{background:transparent;color:var(--text);border:2px solid var(--line)}
+.hero .btn.hero-btn{margin-bottom:22px}
+.bullets{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-weight:500}
+.bullets li{display:flex;gap:11px;align-items:flex-start}
+.bullets svg{width:20px;height:20px;flex:none;margin-top:2px;stroke:var(--accent);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+@container lp (min-width:600px){
+  .hero{min-height:clamp(500px,60cqw,560px)}
+  .hero-img{position:absolute;inset:0 0 72px auto;width:58%;height:auto}
+  .hero-img img{object-position:78% 50%}
+  .hero-img::after{background:linear-gradient(90deg,var(--navy-d) 0,color-mix(in srgb,var(--navy-d) 80%,transparent) 12%,transparent 40%),linear-gradient(180deg,color-mix(in srgb,var(--navy-d) 60%,transparent) 0,transparent 18%,transparent 66%,var(--navy-d) 100%)}
+  .hero-copy{margin-top:0;padding:clamp(30px,5cqw,46px) clamp(24px,4.4cqw,44px) 108px;max-width:min(50%,470px)}
+  .hero h1{font-size:clamp(2.05rem,5.7cqw,3.3rem)}
+  .hero .sub{font-size:1.06rem;max-width:34ch}
+  .hero .btn.hero-btn{display:none}
+}
+.hero-btn{}
+
+.form-wrap{position:relative;z-index:3;margin:-76px clamp(14px,3.4cqw,32px) 0}
+.card{background:var(--surface);color:var(--text);border-radius:14px;box-shadow:0 22px 50px rgba(8,20,40,.28);border:1px solid var(--line);padding:clamp(20px,4cqw,34px)}
+.card h2{font-size:clamp(1.65rem,6.4cqw,2.2rem);color:var(--text)}
+.card .fsub{color:var(--muted);margin:6px 0 20px}
+.grid{display:grid;grid-template-columns:1fr;gap:14px}
+@container lp (min-width:560px){.grid{grid-template-columns:1fr 1fr;gap:16px 18px}}
+.field label{display:block;font:600 .88rem/1.2 "Barlow";letter-spacing:.02em;margin-bottom:6px;color:var(--text)}
+.field input{width:100%;min-height:52px;padding:0 14px;font:500 16px/1.2 "Barlow";color:var(--text);background:#fff;border:1.5px solid #B4BECB;border-radius:10px}
+.field input::placeholder{color:#6B7787}
+.field input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 55%,transparent)}
+.field.bad input{border-color:var(--err)}
+.field .err{display:none;margin-top:5px;font-size:.85rem;font-weight:600;color:var(--err)}
+.field.bad .err{display:block}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.card .btn{margin-top:20px}
+.micro{margin-top:14px;font-size:.92rem;line-height:1.5;color:var(--muted);display:flex;gap:10px}
+.micro svg{width:18px;height:18px;flex:none;margin-top:2px;stroke:var(--navy);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.done{display:none}
+.card.is-done form{display:none}
+.card.is-done .done{display:block;animation:rise .45s ease both}
+.card.is-done .formhead{display:none}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.badge{display:inline-flex;align-items:center;gap:8px;font:700 .74rem/1 "Barlow";letter-spacing:.22em;text-transform:uppercase;color:var(--ink);background:var(--accent);padding:8px 12px;border-radius:6px;margin-bottom:14px}
+.done h2{margin-bottom:10px}
+.done .body{color:var(--text);max-width:60ch}
+.msgs{display:grid;gap:12px;margin:18px 0 6px}
+@container lp (min-width:560px){.msgs{grid-template-columns:1fr 1fr}}
+.msg{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--soft);font-size:.92rem;line-height:1.45}
+.msg small{display:block;font:700 .7rem/1 "Barlow";letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.demo-note{font-size:.85rem;color:var(--muted);margin-top:8px}
+.slot-line{display:none;align-items:center;gap:10px;margin-top:14px;font-weight:600}
+.slot-line.on{display:flex}
+.slot-line svg{width:20px;height:20px;stroke:var(--navy);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.actions{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;margin-top:20px}
+.actions .btn{margin-top:0}
+.linkbtn{background:none;border:0;padding:12px 4px;min-height:48px;font:600 1rem/1 "Barlow";color:var(--navy);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+
+.sec{padding:clamp(40px,9cqw,76px) clamp(18px,5cqw,44px)}
+.sec.first{padding-top:clamp(36px,8cqw,64px)}
+.sec.soft{background:var(--soft)}
+.sec h2.t{font-size:clamp(2rem,7.4cqw,3rem);color:var(--text);max-width:18ch}
+.sec .lead{color:var(--muted);margin-top:12px;max-width:52ch;font-size:1.05rem}
+.cards{display:grid;grid-template-columns:1fr;gap:16px;margin-top:30px}
+@container lp (min-width:620px){.cards{grid-template-columns:repeat(3,1fr);gap:18px}}
+.cardx{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 22px 26px}
+.cardx .ic{width:48px;height:48px;border-radius:12px;background:var(--navy-d);display:grid;place-items:center;margin-bottom:16px}
+.cardx .ic svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cardx h3{font-size:1.65rem;margin-bottom:10px;color:var(--text)}
+.cardx p{color:var(--muted);font-size:1rem}
+.steps{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:22px;position:relative;counter-reset:s}
+@container lp (min-width:620px){.steps{grid-template-columns:repeat(3,1fr);gap:22px}.steps::before{content:"";position:absolute;left:21px;right:calc(33% - 21px);top:21px;height:2px;background:var(--accent);opacity:.9}}
+.steps li{position:relative;padding-left:62px;counter-increment:s}
+@container lp (min-width:620px){.steps li{padding-left:0;padding-top:62px}}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;background:var(--navy-d);color:var(--accent);font:800 1.4rem/44px "Barlow Condensed";text-align:center;z-index:1}
+.steps h3{font-size:1.5rem;margin-bottom:6px;color:var(--text)}
+.steps p{color:var(--muted);font-size:1rem;max-width:30ch}
+.cta-row{margin-top:36px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta-row .risk{font-size:.95rem;color:var(--muted);display:flex;gap:8px;align-items:center}
+.cta-row .risk svg{width:18px;height:18px;stroke:var(--navy);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.cred{display:grid;gap:30px}
+@container lp (min-width:700px){.cred{grid-template-columns:1.05fr .95fr;gap:44px;align-items:start}}
+.cred .body{margin-top:16px;color:var(--text);max-width:56ch}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.checks li{display:flex;gap:12px;align-items:flex-start;font-weight:600;padding:14px 16px;background:var(--soft);border-radius:12px;border:1px solid var(--line)}
+.checks svg{width:22px;height:22px;flex:none;stroke:var(--navy);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;margin-top:1px}
+.proofhead{margin-top:clamp(40px,8cqw,64px);display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.proofhead h2{font-size:clamp(1.7rem,6.2cqw,2.4rem);color:var(--text)}
+.proofhead .rate{margin:0;color:var(--text);background:var(--surface);border-color:var(--line)}
+.proofhead .stars svg{fill:var(--accent);stroke:color-mix(in srgb,var(--accent) 60%,#000);stroke-width:.5}
+.reviews{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+@container lp (min-width:700px){.reviews{grid-template-columns:repeat(3,1fr)}}
+.rev{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px}
+.rev blockquote{margin:0;font-size:1.02rem;line-height:1.55;color:var(--text);flex:1}
+.rev .who{font-weight:600;font-size:.95rem}
+.rev .who span{display:block;font-weight:500;color:var(--muted);font-size:.88rem}
+.final{background:var(--navy-d);color:#fff;text-align:center;padding:clamp(48px,10cqw,84px) clamp(18px,5cqw,44px);position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 90% at 50% 120%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%)}
+.final>*{position:relative}
+.final h2{font-size:clamp(2.1rem,8.6cqw,3.4rem);max-width:16ch;margin:0 auto 14px}
+.final p{color:#d7e0ec;max-width:46ch;margin:0 auto 28px;font-size:1.08rem}
+.final .btn{padding:0 clamp(18px,4cqw,34px);min-height:58px;max-width:100%}
+.final .risk{margin-top:16px;font-size:.92rem;color:#c3cfdf}
+.lp-foot{background:var(--navy-d);color:#c3cfdf;border-top:1px solid rgba(255,255,255,.12);padding:22px clamp(18px,5cqw,44px) 26px;font-size:.88rem;line-height:1.6}
+.lp-foot .disc{margin-top:10px;font-style:italic;color:#9fb0c6;font-size:.82rem}
+
+/* sticky mobile bar and slot modal live outside .lp so position:fixed is relative to the viewport */
+.sbar{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--navy-d) 96%,transparent);border-top:1px solid rgba(255,255,255,.16);display:none;transform:translateY(110%);transition:transform .25s}
+.sbar.show{transform:none}
+@media (max-width:900px){.sbar{display:block}}
+.sbar .btn{width:100%;font-family:"Barlow",sans-serif}
+.modal{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(5,12,24,.7)}
+.modal.open{display:flex}
+.mbox{background:var(--surface);color:var(--text);width:min(520px,100%);max-height:calc(100vh - 32px);overflow:auto;border-radius:16px;padding:26px 22px 22px;font-family:"Barlow",sans-serif;position:relative}
+.mbox h2{font:800 clamp(1.7rem,6vw,2.1rem)/1.05 "Barlow Condensed";margin:0 36px 6px 0}
+.mbox .msub{color:var(--muted);margin:0 0 16px}
+.mclose{position:absolute;right:8px;top:8px;width:48px;height:48px;border:0;background:none;cursor:pointer;color:var(--text);font-size:30px;line-height:1}
+.mclose:focus-visible,.slot:focus-visible,.dayb:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:14px}
+.dayb{flex:1 0 auto;min-width:92px;min-height:56px;border:1.5px solid var(--line);border-radius:10px;background:#fff;font:600 .95rem/1.2 "Barlow";cursor:pointer;color:var(--text)}
+.dayb[aria-pressed="true"]{background:var(--navy-d);color:#fff;border-color:var(--navy-d)}
+.slots{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.slot{min-height:52px;border:1.5px solid var(--line);border-radius:10px;background:#fff;font:600 1rem/1 "Barlow";cursor:pointer;color:var(--text)}
+.slot[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+.slot:disabled{background:#F1F3F5;color:#6B7280;text-decoration:line-through;cursor:not-allowed}
+.mbox .btn{margin-top:18px;width:100%}
+.mbox .btn[disabled]{opacity:.5;cursor:not-allowed;transform:none;filter:none}
+.mnote{margin-top:12px;font-size:.85rem;color:var(--muted)}
+
+@media (max-width:760px){
+  .funnel{grid-template-columns:1fr}
+  .funnel li{border-right:0;border-bottom:1px solid rgba(201,162,75,.35)}
+  .funnel li:last-child{border-bottom:0}
+  .funnel li:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-9px;transform:translateX(-50%) rotate(135deg)}
+  .cs-head{padding-top:36px}
+  .eyebrow{letter-spacing:.18em;font-size:10px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ico-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></symbol>
+  <symbol id="ico-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+  <symbol id="ico-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ico-plug" viewBox="0 0 24 24"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0zM12 17v5"/></symbol>
+  <symbol id="ico-badge" viewBox="0 0 24 24"><path d="M12 2l2.4 2 3.1-.2 1 2.9 2.7 1.6-.9 3 .9 3-2.7 1.6-1 2.9-3.1-.2L12 22l-2.4-2-3.1.2-1-2.9L2.8 15.7l.9-3-.9-3 2.7-1.6 1-2.9 3.1.2z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/></symbol>
+  <symbol id="ico-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="ico-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="ico-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+</svg>
+
+<nav class="top" aria-label="Main">
+  <a class="plogo" href="/"><img src="/uploads/pixai-logo.webp" alt="PixAI AI Solutions"></a>
+  <div class="plinks">
+    <a href="/portfolio" class="on">Portfolio</a>
+    <a href="/#create">Services</a>
+    <a href="/websites-seo">Websites &amp; SEO</a>
+    <a href="/#packages">Packages</a>
+    <a href="/#story">About</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#contact">Contact</a>
+    <a href="/#contact" class="cta">Start a Project</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <section class="cs-head">
+    <p class="eyebrow">Case Study &nbsp;/&nbsp; Ad + Landing Page Funnel</p>
+    <h1>Local Home-Service Ad-to-Landing-Page Funnel: <em>Kraft Electric, LLC</em></h1>
+    <p class="sub">Turning storm-outage urgency into booked whole-home standby generator estimates across Pierce County, WA.</p>
+  </section>
+
+  <ol class="funnel" aria-label="Funnel architecture in three steps">
+    <li><span class="n">01</span><span class="k">Step 1</span><h2>Local Video Ad Hook</h2><p>Geo-targeted 15s vertical video calling out Pierce County homeowners with weather-driven urgency.</p></li>
+    <li><span class="n">02</span><span class="k">Step 2</span><h2>Message-Matched Landing Page</h2><p>Dedicated single-service page mirroring the exact headline, offer, and visual continuity of the ad.</p></li>
+    <li><span class="n">03</span><span class="k">Step 3</span><h2>Instant Speed-to-Lead Follow-Up</h2><p>Immediate quote capture with automated SMS/email confirmation and fast callback workflow so leads never go cold.</p></li>
+  </ol>
+
+  <section class="stage" aria-label="Ad and landing page preview">
+    <div class="phone-col">
+      <div class="phone-w">
+        <div class="phone">
+          <div class="screen">
+            <span class="notch"></span>
+            <video id="ad" playsinline preload="metadata" poster="assets/kraft-ad-poster.jpg" aria-label="Kraft Electric 15 second vertical video ad">
+              <source src="assets/kraft-ad.mp4" type="video/mp4">
+            </video>
+            <button class="playbtn" id="playbtn" type="button" aria-label="Play the ad with sound">
+              <span class="disc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8z"/></svg></span>
+              <span>Tap to play with sound</span>
+            </button>
+            <button class="soundbtn" id="soundbtn" type="button" aria-pressed="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path id="wave" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+              <span id="soundlbl">Sound on</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <p class="cap">15s Paid Social Ad Creative (9:16 Vertical)</p>
+      <details class="vo">
+        <summary>Read the voiceover</summary>
+        <p>"Pierce County homeowners, when the next windstorm knocks out the grid, don't get stuck in the dark! Kraft Electric installs whole-home standby generators that restore your power automatically, in seconds! Storm season is already here, so tap below to get your free installation estimate before the next outage hits!"</p>
+      </details>
+    </div>
+
+    <div class="demo-col">
+      <p class="demo-label"><i class="dot"></i> Live interactive demo <span class="hint">Fill in the form and press the button to see what the homeowner sees.</span></p>
+      <div class="frame">
+        <div class="lp" id="lp">
+
+          <header class="lp-head">
+            <a class="logo" href="#top" aria-label="Kraft Electric, LLC"><img src="assets/kraft-logo.png" width="490" height="150" alt="Kraft Electric, LLC"></a>
+            <p class="area">Serving Bonney Lake, Lake Tapps &amp; Pierce County</p>
+          </header>
+
+          <section class="hero on-dark" id="lp-hero">
+            <div class="hero-img">
+              <picture>
+                <source media="(max-width:650px)" srcset="assets/hero-phone.webp">
+                <img src="assets/hero.webp" srcset="assets/hero-1280.webp 1280w, assets/hero.webp 1920w" sizes="(min-width:1000px) 860px, 100vw" width="1920" height="1080" alt="A whole-home standby generator on a concrete pad beside a house on a rainy Pacific Northwest evening, its green power light on.">
+              </picture>
+            </div>
+            <div class="hero-copy">
+              <p class="rate"><span class="stars" aria-hidden="true"><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg></span> <span>5.0 from 112 reviews</span></p>
+              <span class="kicker">Pierce County Homeowners</span>
+              <h1>Got a Plan for the Next Power Outage?</h1>
+              <p class="sub">Storm season is already here. Kraft Electric installs whole-home standby generators that restore your electricity automatically in seconds. No extension cords, no hassle.</p>
+              <button class="btn hero-btn" type="button" data-goform>Get My Free Estimate</button>
+              <ul class="bullets">
+                <li><svg aria-hidden="true"><use href="#ico-check"/></svg>Licensed, Bonded &amp; Insured in Washington</li>
+                <li><svg aria-hidden="true"><use href="#ico-check"/></svg>20+ Years Serving Pierce &amp; King County</li>
+                <li><svg aria-hidden="true"><use href="#ico-check"/></svg>Free, No-Pressure On-Site Estimates</li>
+              </ul>
+            </div>
+          </section>
+
+          <div class="form-wrap">
+            <div class="card" id="form-card">
+              <div class="formhead">
+                <h2>Request Your Free Installation Estimate</h2>
+                <p class="fsub">Find out what a whole-home standby generator costs for your home.</p>
+              </div>
+              <form id="lead" novalidate autocomplete="on">
+                <div class="grid">
+                  <div class="field"><label for="f-name">Full Name</label><input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name"><span class="err" id="e-name" role="alert">Please enter your name.</span></div>
+                  <div class="field"><label for="f-phone">Phone Number</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="e-phone"><span class="err" id="e-phone" role="alert">Please enter a phone number we can reach you at.</span></div>
+                  <div class="field"><label for="f-email">Email Address</label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><span class="err" id="e-email" role="alert">Please enter a valid email address.</span></div>
+                  <div class="field"><label for="f-city">City or Zip Code</label><input id="f-city" name="city" type="text" autocomplete="address-level2" placeholder="e.g., Bonney Lake, Lake Tapps, Puyallup" required aria-describedby="e-city"><span class="err" id="e-city" role="alert">Please enter your city or zip code.</span></div>
+                </div>
+                <div class="hp" aria-hidden="true"><label>Company<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+                <input type="hidden" name="utm_source" id="utm_source"><input type="hidden" name="utm_campaign" id="utm_campaign">
+                <button class="btn block" type="submit">Get My Free Estimate</button>
+                <p class="micro"><svg aria-hidden="true"><use href="#ico-clock"/></svg><span>Instant confirmation sent via text and email. Brandon or a team member follows up within 15 minutes during business hours so you are never left waiting.</span></p>
+              </form>
+
+              <div class="done" id="done" tabindex="-1" aria-live="polite">
+                <span class="badge">Demo Lead Captured</span>
+                <h2>Estimate Request Received!</h2>
+                <p class="body">An automatic SMS and email confirmation has been triggered so your inquiry never sits in an inbox. Brandon will call you shortly to confirm details for your free on-site assessment.</p>
+                <div class="msgs">
+                  <div class="msg"><small>Text message, sent instantly</small><span id="sms-text"></span></div>
+                  <div class="msg"><small>Email, sent instantly</small><span id="mail-text"></span></div>
+                </div>
+                <p class="demo-note">Demo only: nothing was sent and none of your information was saved. These previews show what the automation would send.</p>
+                <p class="slot-line" id="slot-line"><svg aria-hidden="true"><use href="#ico-check"/></svg><span id="slot-text"></span></p>
+                <div class="actions">
+                  <button class="btn" type="button" id="open-slots" aria-haspopup="dialog">Or Pick a Time on Our Calendar Now</button>
+                  <button class="linkbtn" type="button" id="reset">Reset Demo Form</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <section class="sec first" aria-labelledby="h-benefits">
+            <h2 class="t" id="h-benefits">Automatic Backup Power When the Grid Goes Down</h2>
+            <p class="lead">Built to protect your family, home, and comfort through Pacific Northwest windstorms.</p>
+            <div class="cards">
+              <article class="cardx"><div class="ic"><svg aria-hidden="true"><use href="#ico-bolt"/></svg></div><h3>Power Restored in Seconds</h3><p>The moment a storm knocks out neighborhood power, your standby generator detects the outage and turns on automatically. Your heat, refrigerator, Wi-Fi, and lights stay running without you lifting a finger.</p></article>
+              <article class="cardx"><div class="ic"><svg aria-hidden="true"><use href="#ico-plug"/></svg></div><h3>No Extension Cords or Gas Cans</h3><p>Forget hauling a portable generator out into the pouring rain or running cords through cracked windows. Permanently installed systems connect directly to your electrical panel and natural gas or propane line.</p></article>
+              <article class="cardx"><div class="ic"><svg aria-hidden="true"><use href="#ico-badge"/></svg></div><h3>Installed by Local Master Electricians</h3><p>With over 20 years of electrical experience in Bonney Lake, Lake Tapps, and Pierce County, Kraft Electric handles load calculations, permitting, and code-compliant installation from start to finish.</p></article>
+            </div>
+          </section>
+
+          <section class="sec soft" aria-labelledby="h-steps">
+            <h2 class="t" id="h-steps">Your free estimate takes three simple steps</h2>
+            <ol class="steps">
+              <li><h3>Tell us about your home</h3><p>Four quick fields. Takes less than a minute.</p></li>
+              <li><h3>We call to set your visit</h3><p>Brandon or a team member follows up within 15 minutes during business hours.</p></li>
+              <li><h3>Get honest, upfront pricing</h3><p>A free, no-pressure on-site assessment with a clear installation estimate.</p></li>
+            </ol>
+            <div class="cta-row">
+              <button class="btn" type="button" data-goform>Get My Free Estimate</button>
+              <p class="risk"><svg aria-hidden="true"><use href="#ico-shield"/></svg>Free, no-pressure on-site estimates</p>
+            </div>
+          </section>
+
+          <section class="sec" aria-labelledby="h-cred">
+            <div class="cred">
+              <div>
+                <h2 class="t" id="h-cred">Why Pierce County Homeowners Trust Kraft Electric</h2>
+                <p class="body">Installing a whole-home standby generator requires proper load calculations, automatic transfer switch wiring, and strict adherence to Washington electrical codes. At Kraft Electric, LLC, we evaluate your home's exact power needs and walk you through your options clearly with honest, upfront pricing and zero high-pressure sales tactics.</p>
+              </div>
+              <ul class="checks">
+                <li><svg aria-hidden="true"><use href="#ico-check"/></svg>20+ Years of Residential &amp; Commercial Electrical Experience</li>
+                <li><svg aria-hidden="true"><use href="#ico-check"/></svg>Local Service Across Bonney Lake, Lake Tapps, Sumner, Buckley &amp; Auburn</li>
+                <li><svg aria-hidden="true"><use href="#ico-check"/></svg>Clean, Code-Compliant Transfer Switch &amp; Panel Integration</li>
+                <li><svg aria-hidden="true"><use href="#ico-check"/></svg>Fast Response &amp; Dedicated Local Support</li>
+              </ul>
+            </div>
+            <div class="proofhead">
+              <h2>Pierce County homeowners rate us 5.0</h2>
+              <p class="rate"><span class="stars" aria-hidden="true"><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg></span> <span>5.0 from 112 reviews</span></p>
+            </div>
+            <div class="reviews">
+              <figure class="rev" style="margin:0"><span class="stars" role="img" aria-label="5 out of 5 stars"><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg></span><blockquote>The windstorm took out our whole street for two days. Our lights were back on in seconds and the fridge never stopped. Best money we have spent on the house.</blockquote><figcaption class="who">Dana R.<span>Lake Tapps</span></figcaption></figure>
+              <figure class="rev" style="margin:0"><span class="stars" role="img" aria-label="5 out of 5 stars"><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg></span><blockquote>They walked us through every option and the price, with zero pressure. The install was clean and the panel work looks great.</blockquote><figcaption class="who">Mark T.<span>Bonney Lake</span></figcaption></figure>
+              <figure class="rev" style="margin:0"><span class="stars" role="img" aria-label="5 out of 5 stars"><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg><svg><use href="#ico-star"/></svg></span><blockquote>I got a call back the same afternoon I filled out the form. They sized the generator to our home and handled the permit.</blockquote><figcaption class="who">Priya S.<span>Sumner</span></figcaption></figure>
+            </div>
+          </section>
+
+          <section class="final on-dark" id="final-cta" aria-labelledby="h-final">
+            <h2 id="h-final">Don't Get Stuck in the Dark This Storm Season</h2>
+            <p>Get a clear, no-obligation installation estimate for your home before the next outage hits.</p>
+            <button class="btn" type="button" data-goform>Request a Free Generator Installation Estimate</button>
+            <p class="risk">Free, no-pressure on-site estimates</p>
+          </section>
+
+          <footer class="lp-foot">
+            <p>Kraft Electric, LLC | Licensed &amp; Insured Electrical Contractor | Bonney Lake &amp; Pierce County, WA</p>
+            <p class="disc">Interactive ad-to-landing-page funnel concept designed and built by PixAI AI Solutions.</p>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-foot">Concept project by PixAI AI Solutions. Example work.</footer>
+</div>
+
+<!-- sticky phone bar -->
+<div class="sbar" id="sbar"><button class="btn" type="button" data-goform>Get My Free Estimate</button></div>
+
+<!-- time slot picker (demo) -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title">
+  <div class="mbox">
+    <button class="mclose" type="button" id="mclose" aria-label="Close">&times;</button>
+    <h2 id="m-title">Pick a Time for Your Free Estimate</h2>
+    <p class="msub">Choose a day and time for your on-site assessment.</p>
+    <div class="days" id="days" role="group" aria-label="Day"></div>
+    <div class="slots" id="slots" role="group" aria-label="Time"></div>
+    <button class="btn" type="button" id="mconfirm" disabled>Confirm This Time</button>
+    <p class="mnote">Demo only. In a live build this books the visit on the Kraft Electric calendar and sends a reminder text.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ad video: tap to play with sound */
+  var ad=$('#ad'),pb=$('#playbtn'),sb=$('#soundbtn'),sl=$('#soundlbl'),wave=$('#wave');
+  function paintSound(){var on=!ad.muted;sb.setAttribute('aria-pressed',String(on));sl.textContent=on?'Sound on':'Muted';wave.style.display=on?'':'none'}
+  pb.addEventListener('click',function(){
+    ad.muted=false;ad.volume=1;
+    var p=ad.play();
+    function started(){pb.style.display='none';sb.classList.add('on');ad.controls=true;paintSound()}
+    if(p&&p.then){p.then(started).catch(function(){ad.muted=true;ad.play().then(started).catch(function(){})})}else started();
+  });
+  sb.addEventListener('click',function(){ad.muted=!ad.muted;paintSound()});
+  ad.addEventListener('ended',function(){pb.style.display='';pb.querySelector('span:last-child').textContent='Tap to replay with sound';sb.classList.remove('on');ad.controls=false;ad.currentTime=0});
+  if('IntersectionObserver' in window){new IntersectionObserver(function(e){if(!e[0].isIntersecting&&!ad.paused)ad.pause()},{threshold:0}).observe(ad)}
+
+  /* UTM capture (kept in the page only, demo sends nothing) */
+  try{var sp=new URLSearchParams(location.search);$('#utm_source').value=sp.get('utm_source')||'';$('#utm_campaign').value=sp.get('utm_campaign')||''}catch(e){}
+
+  /* go to form */
+  var card=$('#form-card');
+  function goForm(){
+    if(card.classList.contains('is-done')){card.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});$('#done').focus({preventScroll:true});return}
+    card.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+    setTimeout(function(){try{$('#f-name').focus({preventScroll:true})}catch(e){}},reduce?0:450);
+  }
+  $$('[data-goform]').forEach(function(b){b.addEventListener('click',goForm)});
+
+  /* form */
+  var form=$('#lead');
+  function fieldOK(id){
+    var el=$('#'+id),v=el.value.trim(),ok=true;
+    if(id==='f-name')ok=v.length>=2;
+    if(id==='f-phone')ok=v.replace(/\D/g,'').length>=10;
+    if(id==='f-email')ok=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+    if(id==='f-city')ok=v.length>=3;
+    el.parentNode.classList.toggle('bad',!ok);el.setAttribute('aria-invalid',String(!ok));
+    return ok;
+  }
+  ['f-name','f-phone','f-email','f-city'].forEach(function(id){
+    $('#'+id).addEventListener('blur',function(){if(this.value)fieldOK(id)});
+    $('#'+id).addEventListener('input',function(){if(this.parentNode.classList.contains('bad'))fieldOK(id)});
+  });
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var firstBad=null;
+    ['f-name','f-phone','f-email','f-city'].forEach(function(id){if(!fieldOK(id)&&!firstBad)firstBad=id});
+    if(firstBad){$('#'+firstBad).focus();return}
+    if(form.elements.company.value)return; /* honeypot */
+    var first=$('#f-name').value.trim().split(/\s+/)[0];
+    $('#sms-text').textContent='Kraft Electric, LLC: Hi '+first+'! We got your standby generator estimate request. A team member will call you within 15 minutes during business hours. Reply STOP to opt out.';
+    $('#mail-text').textContent='Subject: We got your generator estimate request. Hi '+first+', thank you for reaching out to Kraft Electric. We will call you shortly to set up your free on-site assessment.';
+    card.classList.add('is-done');
+    card.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+    $('#done').focus({preventScroll:true});
+  });
+  $('#reset').addEventListener('click',function(){
+    form.reset();$$('.field',form).forEach(function(f){f.classList.remove('bad')});
+    card.classList.remove('is-done');$('#slot-line').classList.remove('on');
+    card.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+    setTimeout(function(){$('#f-name').focus({preventScroll:true})},reduce?0:350);
+  });
+
+  /* slot picker */
+  var modal=$('#modal'),daysEl=$('#days'),slotsEl=$('#slots'),conf=$('#mconfirm'),lastFocus=null,selDay=null,selTime=null;
+  var times=['8:00 AM','10:00 AM','12:00 PM','2:00 PM','4:00 PM','5:30 PM'], booked={0:[2],1:[0,3],2:[4],3:[1]};
+  var dnames=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], mnames=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var dayList=[];(function(){var d=new Date();while(dayList.length<4){d.setDate(d.getDate()+1);if(d.getDay()!==0&&d.getDay()!==6)dayList.push(new Date(d))}})();
+  function dayLabel(d){return dnames[d.getDay()]+', '+mnames[d.getMonth()]+' '+d.getDate()}
+  function drawSlots(){
+    slotsEl.innerHTML='';
+    times.forEach(function(t,i){
+      var b=document.createElement('button');b.type='button';b.className='slot';b.textContent=t;
+      var isBooked=(booked[selDay]||[]).indexOf(i)>-1;b.disabled=isBooked;if(isBooked)b.setAttribute('aria-label',t+', booked');
+      b.setAttribute('aria-pressed',String(selTime===t));
+      b.addEventListener('click',function(){selTime=t;conf.disabled=false;drawSlots()});
+      slotsEl.appendChild(b);
+    });
+  }
+  function drawDays(){
+    daysEl.innerHTML='';
+    dayList.forEach(function(d,i){
+      var b=document.createElement('button');b.type='button';b.className='dayb';b.textContent=dayLabel(d);b.setAttribute('aria-pressed',String(selDay===i));
+      b.addEventListener('click',function(){selDay=i;selTime=null;conf.disabled=true;drawDays();drawSlots()});
+      daysEl.appendChild(b);
+    });
+  }
+  function openModal(){lastFocus=document.activeElement;selDay=0;selTime=null;conf.disabled=true;drawDays();drawSlots();modal.classList.add('open');document.body.style.overflow='hidden';$('#mclose').focus()}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';if(lastFocus)lastFocus.focus()}
+  $('#open-slots').addEventListener('click',openModal);
+  $('#mclose').addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal()});
+  conf.addEventListener('click',function(){
+    $('#slot-text').textContent='Visit requested for '+dayLabel(dayList[selDay])+' at '+selTime+' (demo)';
+    $('#slot-line').classList.add('on');
+    $('#open-slots').textContent='Change Your Time';
+    closeModal();
+  });
+  document.addEventListener('keydown',function(e){
+    if(!modal.classList.contains('open'))return;
+    if(e.key==='Escape'){closeModal();return}
+    if(e.key==='Tab'){
+      var f=$$('button:not([disabled])',modal);if(!f.length)return;
+      var first=f[0],last=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+    }
+  });
+
+  /* sticky phone bar: show after the hero scrolls away, hide near the form or final CTA */
+  var sbar=$('#sbar'),st={lp:false,hero:true,form:false,final:false};
+  function paintBar(){sbar.classList.toggle('show',st.lp&&!st.hero&&!st.form&&!st.final)}
+  if('IntersectionObserver' in window){
+    function watch(el,key){new IntersectionObserver(function(e){st[key]=e[0].isIntersecting;paintBar()},{threshold:0}).observe(el)}
+    watch($('#lp'),'lp');watch($('#lp-hero'),'hero');watch(card,'form');watch($('#final-cta'),'final');
+  }
+})();
+</script>
+</body>
+</html>
