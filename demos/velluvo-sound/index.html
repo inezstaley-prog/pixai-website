@@ -285,6 +285,18 @@ a{color:inherit}
   .hdr .btn{padding:0 10px;font-size:9px;letter-spacing:.1em}
   .snd{padding:0 9px 0 7px;font-size:9px;letter-spacing:.1em}
 }
+
+/* about this concept */
+.about-open{font:inherit;color:inherit;background:none;border:0;opacity:.78;min-height:44px;display:inline-flex;align-items:center;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.about-open:hover{opacity:1}
+.about{margin:auto;width:min(620px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto;padding:clamp(28px,5vw,52px);border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.about::backdrop{background:rgba(19,27,41,.62);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.about .eyebrow{color:var(--ink-2);margin-bottom:18px}
+.about h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,4vw,38px);line-height:1.1;letter-spacing:-.01em}
+.about h2 em{font-style:italic}
+.about p{margin-top:16px;color:var(--ink-2);font-size:16px;line-height:1.65}
+.about .note{font-size:13px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.about-x{position:absolute;top:8px;right:10px;width:44px;height:44px;border:0;background:none;color:var(--ink);font-size:28px;line-height:1;cursor:pointer}
 </style>
 </head>
 <body>
@@ -455,9 +467,19 @@ a{color:inherit}
 
 <footer class="ftr">
   <a class="wm" href="#top" aria-label="VELLUVO, back to top">VELLU<span class="v">V</span>O</a>
-  <nav aria-label="Legal"><a href="#">Privacy</a><a href="#">Terms</a></nav>
+  <nav aria-label="Legal"><button class="about-open" id="about-open" type="button">About this concept</button><a href="#">Privacy</a><a href="#">Terms</a></nav>
   <small>&copy; 2026 VELLUVO</small>
 </footer>
+
+
+<dialog class="about" id="about" aria-labelledby="about-h">
+  <button class="about-x" id="about-x" type="button" aria-label="Close">&times;</button>
+  <p class="eyebrow">Concept project</p>
+  <h2 id="about-h">VELLUVO: The Tilt. <em>One launch, one continuous experience.</em></h2>
+  <p>Too often, a great ad sends traffic to a generic landing page that has nothing to do with it. That disconnect can erode trust and cost conversions.</p>
+  <p>Here, the ad and the landing page are built as one experience. The 11-second film sets the mood, and the page picks up the same movement, storyline and musical score. When the page feels like a natural continuation of the ad, visitors know they are in the right place, and a 24-hour private early access offer is an easy yes. Sound is always the visitor's choice: it starts with a tap and can be turned off at any time.</p>
+  <p class="note">Concept project. Brand, numbers, and details are illustrative.</p>
+</dialog>
 
 <script>
 (() => {
@@ -743,6 +765,10 @@ a{color:inherit}
       // the ad has finished: roll straight into the landing page
       setTimeout(() => { if (scrollY < film.offsetTop - 40) film.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); }, 600);
     });
+    const about = document.getElementById("about");
+    document.getElementById("about-open").addEventListener("click", () => about.showModal());
+    document.getElementById("about-x").addEventListener("click", () => about.close());
+    about.addEventListener("click", e => { if (e.target === about) about.close(); });
     document.getElementById("adskip").addEventListener("click", ev => { ev.preventDefault(); film.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); });
 
     // scrolling past the hero while the ad is sounding: hand over right away, in step
